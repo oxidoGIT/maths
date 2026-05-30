@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tema 6 · Sistemas de ecuaciones</title>
+  <style>
+    :root{
+      --slate-950:#020617; --slate-900:#0f172a; --slate-800:#1e293b; --slate-700:#334155;
+      --slate-600:#475569; --slate-500:#64748b; --slate-300:#cbd5e1; --slate-200:#e2e8f0;
+      --slate-100:#f1f5f9; --slate-50:#f8fafc;
+      --indigo-700:#4338ca; --indigo-600:#4f46e5; --indigo-100:#e0e7ff; --indigo-50:#eef2ff;
+      --sky-700:#0369a1; --sky-100:#e0f2fe;
+      --emerald-900:#064e3b; --emerald-800:#065f46; --emerald-700:#047857; --emerald-100:#d1fae5; --emerald-50:#ecfdf5;
+      --rose-900:#881337; --rose-700:#be123c; --rose-50:#fff1f2; --amber-700:#b45309; --amber-100:#fef3c7;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--slate-900);
+      background:
+        radial-gradient(circle at top left,#dbeafe,transparent 35%),
+        linear-gradient(180deg,#f8fafc,#eef2ff);
+    }
+    a{color:inherit;text-decoration:none}
+    header{
+      position:sticky;top:0;z-index:20;
+      border-bottom:1px solid rgba(255,255,255,.7);
+      background:rgba(255,255,255,.82);
+      backdrop-filter:blur(14px);
+    }
+    .wrap{max-width:1152px;margin:0 auto;padding:0 16px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:16px;background:var(--indigo-600);color:white;box-shadow:0 12px 24px rgba(79,70,229,.25)}
+    .kicker{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;color:var(--indigo-600)}
+    .brand-title{font-weight:900}
+    nav{display:none;gap:4px}
+    nav a{border-radius:999px;padding:8px 12px;font-size:14px;font-weight:800;color:var(--slate-600)}
+    nav a:hover{background:var(--indigo-50);color:var(--indigo-700)}
+    main{padding:40px 0}
+    section{scroll-margin-top:96px;padding:48px 0}
+    .hero{display:grid;gap:32px;align-items:center;padding-top:0}
+    .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;background:white;padding:8px 16px;font-size:14px;font-weight:800;color:var(--indigo-700);box-shadow:0 1px 3px rgba(15,23,42,.08);border:1px solid var(--indigo-100)}
+    h1{font-size:42px;line-height:1.02;letter-spacing:-.04em;margin:16px 0 0;color:var(--slate-950);font-weight:950}
+    h2{font-size:30px;line-height:1.1;margin:0;font-weight:950;color:var(--slate-950)}
+    h3{margin:0;font-size:20px;font-weight:950}
+    h4{margin:0 0 12px;font-weight:900}
+    p{line-height:1.65}
+    .lead{font-size:18px;color:var(--slate-600);max-width:672px;margin:20px 0 0}
+    .grid3{display:grid;gap:12px;margin-top:24px}
+    .fact{border-radius:18px;background:rgba(255,255,255,.9);padding:16px;text-align:center;font-weight:950;box-shadow:0 1px 3px rgba(15,23,42,.08);border:1px solid var(--slate-200)}
+    .card{border-radius:24px;background:rgba(255,255,255,.92);box-shadow:0 18px 42px rgba(15,23,42,.12);border:1px solid var(--slate-200);overflow:hidden}
+    .card-pad{padding:24px}
+    .soft-card{border-radius:24px;background:white;box-shadow:0 10px 26px rgba(15,23,42,.08);border:1px solid var(--slate-200);padding:20px}
+    .icon-box{display:flex;align-items:center;justify-content:center;border-radius:18px;padding:12px;background:var(--sky-100);color:var(--sky-700)}
+    .row{display:flex;align-items:center;gap:12px}
+    .system{display:flex;align-items:center;gap:12px;border-radius:18px;background:var(--slate-950);color:white;padding:12px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;box-shadow:0 14px 22px rgba(15,23,42,.22)}
+    .brace{font-size:40px;line-height:1;color:#a5b4fc}
+    .system-lines{display:grid;gap:4px}
+    .answer{margin-top:16px;border-radius:18px;background:var(--emerald-50);color:var(--emerald-900);border:1px solid #a7f3d0;padding:16px}
+    .answer strong{display:block;font-weight:950}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+    .cards3{display:grid;gap:20px}
+    .text-muted{color:var(--slate-600)}
+    .mini-graph{width:100%;height:128px;border-radius:18px;background:white;box-shadow:inset 0 2px 10px rgba(15,23,42,.08);border:1px solid var(--slate-200)}
+    .steps-layout{display:grid;gap:24px}
+    .step-list{display:grid;gap:12px}
+    .step{display:flex;gap:16px;border-radius:18px;background:white;padding:16px;box-shadow:0 1px 4px rgba(15,23,42,.06);border:1px solid var(--slate-200)}
+    .num{display:flex;align-items:center;justify-content:center;flex:0 0 auto;width:36px;height:36px;border-radius:999px;background:var(--indigo-600);color:white;font-weight:950}
+    .method-card{border-radius:24px;background:rgba(255,255,255,.92);box-shadow:0 18px 42px rgba(15,23,42,.12);border:1px solid var(--slate-200);overflow:hidden}
+    .method-head{display:flex;align-items:flex-start;gap:12px;padding:20px;background:linear-gradient(90deg,#4f46e5,#0ea5e9);color:white}
+    .method-icon{border-radius:16px;background:rgba(255,255,255,.2);padding:8px}
+    .method-body{display:grid;gap:20px;padding:20px}
+    ol.clean{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+    ol.clean li{display:flex;gap:12px;border-radius:14px;background:var(--slate-50);padding:12px;font-size:14px;color:var(--slate-700);border:1px solid var(--slate-100)}
+    ol.clean span:first-child{display:flex;align-items:center;justify-content:center;width:24px;height:24px;flex:0 0 auto;border-radius:999px;background:var(--indigo-100);color:var(--indigo-700);font-size:12px;font-weight:950}
+    .example{border-radius:20px;background:var(--slate-50);padding:16px;border:1px solid var(--slate-100)}
+    .example-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    button{font:inherit;cursor:pointer}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;border:1px solid var(--slate-200);padding:8px 12px;background:white;color:var(--slate-700);font-weight:900;font-size:13px;transition:.15s}
+    .btn:hover{background:var(--indigo-50);border-color:#a5b4fc;color:var(--indigo-700)}
+    .btn.primary{background:var(--indigo-600);border-color:var(--indigo-600);color:white}
+    .btn.primary:hover{background:var(--indigo-700);color:white}
+    .work{display:none;margin-top:16px;gap:8px}
+    .work.open{display:grid}
+    .work-line{border-radius:14px;background:white;padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;color:var(--slate-800);border:1px solid var(--slate-200)}
+    .work-answer{border-radius:14px;background:var(--emerald-100);padding:12px;font-weight:950;color:var(--emerald-900);border:1px solid #a7f3d0}
+    .filters{display:flex;flex-wrap:wrap;gap:8px}
+    .exercise-grid{display:grid;gap:16px}
+    .exercise-card{border-radius:20px;background:white;padding:16px;box-shadow:0 8px 18px rgba(15,23,42,.08);border:1px solid var(--slate-200)}
+    .exercise-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+    .eyebrow{font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8}
+    .hidden-answer{display:none;margin-top:12px;border-radius:14px;background:var(--emerald-50);padding:12px;text-align:center;font-weight:950;color:var(--emerald-800);border:1px solid #a7f3d0}
+    .hidden-answer.open{display:block}
+    .quiz-grid{display:grid;gap:16px}
+    .quiz-card{border-radius:20px;background:white;padding:20px;box-shadow:0 8px 18px rgba(15,23,42,.08);border:1px solid var(--slate-200)}
+    .quiz-title{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px}
+    .quiz-num{display:flex;align-items:center;justify-content:center;width:32px;height:32px;flex:0 0 auto;border-radius:999px;background:var(--amber-100);color:var(--amber-700);font-weight:950}
+    .options{display:grid;gap:8px}
+    .option{display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:14px;border:1px solid var(--slate-200);background:var(--slate-50);padding:12px;text-align:left;font-size:14px;color:var(--slate-700)}
+    .option:hover{border-color:#a5b4fc;background:var(--indigo-50)}
+    .option.correct{border-color:#6ee7b7;background:var(--emerald-50);color:var(--emerald-900)}
+    .option.wrong{border-color:#fda4af;background:var(--rose-50);color:var(--rose-900)}
+    .option.dim{color:var(--slate-500)}
+    .final{border-radius:28px;background:var(--slate-950);color:white;padding:24px;box-shadow:0 20px 48px rgba(15,23,42,.22)}
+    .final-layout{display:flex;flex-direction:column;gap:16px}
+    .final-note{border-radius:18px;background:rgba(255,255,255,.1);padding:16px;text-align:center;border:1px solid rgba(255,255,255,.15)}
+    details.tests{margin-top:16px;border-radius:18px;background:rgba(255,255,255,.1);padding:16px;font-size:14px;border:1px solid rgba(255,255,255,.15)}
+    details.tests summary{cursor:pointer;font-weight:900;color:#c7d2fe}
+    .test-line{display:flex;align-items:center;gap:8px;margin-top:8px;color:var(--slate-200)}
+    .ok{color:#6ee7b7}
+    .bad{color:#fda4af}
+    .methods{display:grid;gap:24px}
+    .exercise-toolbar{display:flex;flex-direction:column;justify-content:space-between;gap:16px;margin-bottom:24px}
+    @media (min-width: 768px){
+      nav{display:flex}
+      h1{font-size:60px}
+      .grid3{grid-template-columns:repeat(3,1fr)}
+      .cards3{grid-template-columns:repeat(3,1fr)}
+      .steps-layout{grid-template-columns:.9fr 1.1fr}
+      .method-body{grid-template-columns:1fr 1.1fr}
+      .exercise-grid{grid-template-columns:repeat(2,1fr)}
+      .quiz-grid{grid-template-columns:repeat(2,1fr)}
+      .exercise-toolbar{flex-direction:row;align-items:end}
+      .final-layout{flex-direction:row;align-items:center;justify-content:space-between}
+    }
+    @media (min-width: 1024px){
+      .hero{grid-template-columns:1.05fr .95fr}
+      .exercise-grid{grid-template-columns:repeat(3,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo" data-icon="sparkles"></div>
+        <div>
+          <div class="kicker">Tema 6</div>
+          <div class="brand-title">Sistemas de ecuaciones</div>
+        </div>
+      </div>
+      <nav id="nav"></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="pill"><span data-icon="lightbulb"></span> 2º ESO · Álgebra clara y práctica</div>
+        <h1>Resolver sistemas es encontrar el punto que cumple todo.</h1>
+        <p class="lead">Un sistema de dos ecuaciones lineales con dos incógnitas busca un mismo par <b>(x, y)</b> que haga verdaderas las dos ecuaciones a la vez.</p>
+        <div class="grid3">
+          <div class="fact">Una solución</div>
+          <div class="fact">Infinitas</div>
+          <div class="fact">Ninguna</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-pad">
+          <div class="row" style="margin-bottom:16px">
+            <div class="icon-box"><span data-icon="graph" class="big"></span></div>
+            <div>
+              <h3>Ejemplo rápido</h3>
+              <div class="text-muted" style="font-size:14px">El punto solución cumple las dos rectas.</div>
+            </div>
+          </div>
+          <div class="system"><div class="brace">{</div><div class="system-lines"><div>x + y = 5</div><div>2x + y = 9</div></div></div>
+          <div class="answer"><strong>Solución: (4, 1)</strong><span>4 + 1 = 5 y 2·4 + 1 = 9</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="idea">
+      <div class="section-title"><span data-icon="help" class="title-icon"></span><h2>1. Idea clave</h2></div>
+      <div class="cards3">
+        <div class="soft-card"><h3>Sistema</h3><p class="text-muted">Dos ecuaciones que deben cumplirse al mismo tiempo.</p></div>
+        <div class="soft-card"><h3>Solución</h3><p class="text-muted">Un par ordenado <b>(x, y)</b> que verifica las dos ecuaciones.</p></div>
+        <div class="soft-card"><h3>Resolver</h3><p class="text-muted">Encontrar ese par, o decidir si hay infinitas soluciones o ninguna.</p></div>
+      </div>
+    </section>
+
+    <section id="tipos">
+      <h2 style="margin-bottom:24px">2. Número de soluciones</h2>
+      <div class="cards3">
+        <div class="soft-card">
+          <div class="mini-graph" data-graph="cross"></div>
+          <h3 style="margin-top:16px;color:var(--emerald-700)">Compatible determinado</h3>
+          <p class="text-muted">Tiene una única solución. Gráficamente: dos rectas se cortan en un punto.</p>
+        </div>
+        <div class="soft-card">
+          <div class="mini-graph" data-graph="same"></div>
+          <h3 style="margin-top:16px;color:var(--sky-700)">Compatible indeterminado</h3>
+          <p class="text-muted">Tiene infinitas soluciones. Gráficamente: las dos rectas coinciden.</p>
+        </div>
+        <div class="soft-card">
+          <div class="mini-graph" data-graph="parallel"></div>
+          <h3 style="margin-top:16px;color:var(--rose-700)">Incompatible</h3>
+          <p class="text-muted">No tiene solución. Gráficamente: las rectas son paralelas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="grafica">
+      <div class="steps-layout">
+        <div>
+          <h2>3. Representación gráfica</h2>
+          <p class="text-muted">Para dibujar una ecuación lineal, conviértela en una recta.</p>
+        </div>
+        <div class="step-list" id="graphicSteps"></div>
+      </div>
+    </section>
+
+    <section id="metodos">
+      <div style="margin-bottom:24px">
+        <h2>4. Métodos de resolución</h2>
+        <p class="text-muted">Los tres métodos llegan al mismo resultado. Elige el que haga el camino más corto.</p>
+      </div>
+      <div class="methods" id="methods"></div>
+    </section>
+
+    <section id="ejercicios">
+      <div class="exercise-toolbar">
+        <div>
+          <h2>5. Ejercicios</h2>
+          <p class="text-muted">Practica con los sistemas del tema. Puedes mostrar u ocultar la solución.</p>
+        </div>
+        <div class="filters" id="filters"></div>
+      </div>
+      <div class="exercise-grid" id="exercises"></div>
+    </section>
+
+    <section id="test">
+      <div class="section-title"><span data-icon="eye" class="title-icon"></span><h2>6. Mini test</h2></div>
+      <div class="quiz-grid" id="quiz"></div>
+    </section>
+
+    <section>
+      <div class="final">
+        <div class="final-layout">
+          <div>
+            <div class="row" style="color:#c7d2fe;margin-bottom:4px"><span data-icon="lock"></span> Resumen final</div>
+            <h2 style="color:white;font-size:24px">Para dominar el tema</h2>
+            <p style="color:var(--slate-300);max-width:760px">Comprueba siempre la solución sustituyendo el par (x, y) en las dos ecuaciones. Si cumple ambas, está bien.</p>
+            <details class="tests">
+              <summary id="testSummary">Tests internos</summary>
+              <div id="selfTests"></div>
+            </details>
+          </div>
+          <div class="final-note">
+            <div style="font-size:32px;font-weight:950">(x, y)</div>
+            <div style="font-size:14px;color:var(--slate-300)">la solución va en pareja</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const sections = [
+      { id: "idea", label: "Idea clave" },
+      { id: "tipos", label: "Tipos" },
+      { id: "grafica", label: "Gráfica" },
+      { id: "metodos", label: "Métodos" },
+      { id: "ejercicios", label: "Ejercicios" },
+      { id: "test", label: "Test" },
+    ];
+
+    const methods = [
+      {
+        title: "Sustitución",
+        iconName: "refresh",
+        best: "Va muy bien cuando una incógnita ya está casi despejada.",
+        steps: [
+          "Despeja una incógnita en una de las ecuaciones.",
+          "Sustituye esa expresión en la otra ecuación.",
+          "Resuelve la ecuación de una sola incógnita.",
+          "Vuelve a una ecuación inicial y calcula la otra incógnita.",
+        ],
+        example: {
+          system: ["x + 3y = 11", "2x - y = 1"],
+          work: [
+            "De la 2ª: 2x - y = 1  →  y = 2x - 1",
+            "Sustituimos en la 1ª: x + 3(2x - 1) = 11",
+            "x + 6x - 3 = 11  →  7x = 14  →  x = 2",
+            "y = 2·2 - 1 = 3",
+          ],
+          answer: "Solución: (2, 3)",
+        },
+      },
+      {
+        title: "Igualación",
+        iconName: "equation",
+        best: "Va muy bien cuando puedes despejar la misma incógnita en las dos ecuaciones.",
+        steps: [
+          "Despeja la misma incógnita en las dos ecuaciones.",
+          "Iguala las dos expresiones obtenidas.",
+          "Resuelve la ecuación de una sola incógnita.",
+          "Sustituye el valor obtenido y calcula la otra incógnita.",
+        ],
+        example: {
+          system: ["x + 2y = 8", "2x - y = 1"],
+          work: [
+            "De la 1ª: x = 8 - 2y",
+            "De la 2ª: 2x - y = 1  →  x = (1 + y)/2",
+            "Igualamos: 8 - 2y = (1 + y)/2",
+            "16 - 4y = 1 + y  →  15 = 5y  →  y = 3",
+            "x = 8 - 2·3 = 2",
+          ],
+          answer: "Solución: (2, 3)",
+        },
+      },
+      {
+        title: "Reducción",
+        iconName: "route",
+        best: "Va muy bien cuando al sumar o restar ecuaciones se elimina una incógnita.",
+        steps: [
+          "Multiplica una o las dos ecuaciones si hace falta.",
+          "Consigue coeficientes opuestos en x o en y.",
+          "Suma las ecuaciones para eliminar una incógnita.",
+          "Resuelve y sustituye para encontrar la otra incógnita.",
+        ],
+        example: {
+          system: ["x + 2y = 5", "2x - y = 5"],
+          work: [
+            "Multiplicamos la 2ª por 2: 4x - 2y = 10",
+            "Sumamos con la 1ª: x + 2y = 5",
+            "5x = 15  →  x = 3",
+            "3 + 2y = 5  →  2y = 2  →  y = 1",
+          ],
+          answer: "Solución: (3, 1)",
+        },
+      },
+    ];
+
+    const exerciseBank = [
+      { id: "1a", method: "Sustitución", system: ["x + 3y = 11", "2x - y = 1"], answer: "(2, 3)" },
+      { id: "1b", method: "Sustitución", system: ["4x + y = 14", "x - 2y = -1"], answer: "(3, 2)" },
+      { id: "1c", method: "Sustitución", system: ["2x + 3y = 18", "4x - y = 22"], answer: "(6, 2)" },
+      { id: "1d", method: "Sustitución", system: ["3x - 2y = 11", "4x + 5y = 7"], answer: "(3, -1)" },
+      { id: "2a", method: "Igualación", system: ["x + 2y = 8", "2x - y = 1"], answer: "(2, 3)" },
+      { id: "2b", method: "Igualación", system: ["5x + y = 17", "x - 2y = 10"], answer: "(4, -3)" },
+      { id: "2c", method: "Igualación", system: ["2x + 5y = 26", "4x - 3y = 0"], answer: "(3, 4)" },
+      { id: "2d", method: "Igualación", system: ["3x - 4y = -10", "5x + 2y = 2"], answer: "(2, 4)" },
+      { id: "3a", method: "Reducción", system: ["x + 2y = 5", "2x - y = 5"], answer: "(3, 1)" },
+      { id: "3b", method: "Reducción", system: ["4x + y = 7", "2x - 3y = 7"], answer: "(2, -1)" },
+      { id: "3c", method: "Reducción", system: ["2x + 3y = 13", "4x - 3y = 17"], answer: "(5, 1)" },
+      { id: "3d", method: "Reducción", system: ["5x - 2y = 8", "3x + 4y = 18"], answer: "(2, 1)" },
+      { id: "4a", method: "Libre", system: ["x - y = 1", "2x + 3y = 7"], answer: "(2, 1)" },
+      { id: "4b", method: "Libre", system: ["5x + y = 11", "3x - 2y = 4"], answer: "(2, 1)" },
+      { id: "4c", method: "Libre", system: ["2x + 3y = 7", "4x - 5y = 47"], answer: "(8, -3)" },
+      { id: "4d", method: "Libre", system: ["3x - 2y = 4", "5x + 4y = 36"], answer: "(4, 4)" },
+    ];
+
+    const quiz = [
+      { q: "¿Qué es una solución de un sistema de dos ecuaciones?", options: ["Un número cualquiera", "Un par (x, y) que cumple las dos ecuaciones", "La recta del eje x"], ok: 1 },
+      { q: "Si dos rectas se cortan en un punto, el sistema es…", options: ["Compatible determinado", "Compatible indeterminado", "Incompatible"], ok: 0 },
+      { q: "Si dos rectas son paralelas, el sistema tiene…", options: ["Una solución", "Infinitas soluciones", "Ninguna solución"], ok: 2 },
+      { q: "En reducción, la idea principal es…", options: ["Eliminar una incógnita sumando o restando ecuaciones", "Dibujar siempre las rectas", "Probar números al azar"], ok: 0 },
+      { q: "Si las dos ecuaciones representan exactamente la misma recta, el sistema es…", options: ["Compatible indeterminado", "Compatible determinado", "Incompatible"], ok: 0 },
+      { q: "¿Cómo se comprueba una solución como (4, 1)?", options: ["Sustituyendo x = 4 e y = 1 en las dos ecuaciones", "Mirando solo la primera ecuación", "Cambiando x por y"], ok: 0 },
+    ];
+
+    const icons = {
+      sparkles: '<svg viewBox="0 0 24 24"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/><path d="M5 14l.8 2.2L8 17l-2.2.8L5 20l-.8-2.2L2 17l2.2-.8L5 14Z"/></svg>',
+      lightbulb: '<svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8.2 14.5A6 6 0 1 1 15.8 14.5c-.9.7-1.3 1.5-1.5 2.5H9.7c-.2-1-.6-1.8-1.5-2.5Z"/></svg>',
+      help: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 0 1 5.1 1.3c0 1.8-2.6 2.1-2.6 3.7"/><path d="M12 17h.01"/></svg>',
+      equation: '<svg viewBox="0 0 24 24"><path d="M4 9h16"/><path d="M4 15h16"/></svg>',
+      refresh: '<svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.9-4"/><path d="M5 3v4h4"/><path d="M4 13a8 8 0 0 0 14.9 4"/><path d="M19 21v-4h-4"/></svg>',
+      route: '<svg viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h3a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg>',
+      graph: '<svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M6 16l4-5 3 3 5-7"/><path d="M17 7h1v1"/></svg>',
+      eye: '<svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>',
+      lock: '<svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
+      check: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>',
+      x: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6"/><path d="M15 9l-6 6"/></svg>',
+    };
+
+    function icon(name){
+      return (icons[name] || icons.sparkles).replace("<svg ", '<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ');
+    }
+
+    function systemBox(lines){
+      return `<div class="system"><div class="brace">{</div><div class="system-lines">${lines.map(line => `<div>${line}</div>`).join("")}</div></div>`;
+    }
+
+    function renderMiniGraph(type){
+      const lineA = "M18 78 L162 30";
+      const lineB = type === "parallel" ? "M18 96 L162 48" : type === "same" ? "M18 78 L162 30" : "M18 28 L162 96";
+      const bStroke = type === "same" ? "rgb(14 165 233)" : "rgb(244 63 94)";
+      const bWidth = type === "same" ? "2.5" : "4";
+      const dash = type === "same" ? 'stroke-dasharray="7 7"' : "";
+      const point = type === "cross" ? '<circle cx="88" cy="55" r="5" fill="rgb(22 163 74)" />' : "";
+      return `<svg viewBox="0 0 180 120" width="100%" height="100%" role="img" aria-label="Representación gráfica: ${type}">
+        <defs><pattern id="grid-${type}" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M 18 0 L 0 0 0 18" fill="none" stroke="rgb(226 232 240)" stroke-width="1"/></pattern></defs>
+        <rect width="180" height="120" fill="url(#grid-${type})"/>
+        <path d="M90 0 V120 M0 60 H180" stroke="rgb(148 163 184)" stroke-width="1.4"/>
+        <path d="${lineA}" stroke="rgb(37 99 235)" stroke-width="4" stroke-linecap="round"/>
+        <path d="${lineB}" stroke="${bStroke}" stroke-width="${bWidth}" stroke-linecap="round" ${dash}/>
+        ${point}
+      </svg>`;
+    }
+
+    document.querySelectorAll("[data-icon]").forEach(el => {
+      el.innerHTML = icon(el.dataset.icon);
+      el.querySelector("svg").style.width = el.classList.contains("big") ? "24px" : el.classList.contains("title-icon") ? "28px" : "20px";
+      el.querySelector("svg").style.height = el.classList.contains("big") ? "24px" : el.classList.contains("title-icon") ? "28px" : "20px";
+    });
+
+    document.querySelector("#nav").innerHTML = sections.map(s => `<a href="#${s.id}">${s.label}</a>`).join("");
+
+    document.querySelectorAll("[data-graph]").forEach(el => {
+      el.innerHTML = renderMiniGraph(el.dataset.graph);
+    });
+
+    const graphicSteps = [
+      "Despeja y en la ecuación.",
+      "Haz una tabla dando valores a x y calculando y.",
+      "Marca los puntos (x, y) en el plano cartesiano.",
+      "Traza la recta que une los puntos.",
+    ];
+    document.querySelector("#graphicSteps").innerHTML = graphicSteps.map((step, i) =>
+      `<div class="step"><span class="num">${i + 1}</span><span style="font-weight:800;color:var(--slate-700)">${step}</span></div>`
+    ).join("");
+
+    document.querySelector("#methods").innerHTML = methods.map((m, methodIndex) => `
+      <article class="method-card">
+        <div class="method-head">
+          <div class="method-icon">${icon(m.iconName)}</div>
+          <div><h3>Método de ${m.title.toLowerCase()}</h3><p style="margin:4px 0 0;color:#eef2ff;font-size:14px">${m.best}</p></div>
+        </div>
+        <div class="method-body">
+          <div>
+            <h4>Pasos</h4>
+            <ol class="clean">${m.steps.map((step, i) => `<li><span>${i + 1}</span><span>${step}</span></li>`).join("")}</ol>
+          </div>
+          <div class="example">
+            <div class="example-head">
+              <h4 style="margin:0">Ejemplo resuelto</h4>
+              <button class="btn toggle-work" data-work="${methodIndex}">Ver pasos</button>
+            </div>
+            ${systemBox(m.example.system)}
+            <div class="work" id="work-${methodIndex}">
+              ${m.example.work.map(line => `<div class="work-line">${line}</div>`).join("")}
+              <div class="work-answer">${m.example.answer}</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    `).join("");
+
+    document.querySelectorAll(".toggle-work").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const work = document.querySelector(`#work-${btn.dataset.work}`);
+        work.classList.toggle("open");
+        btn.textContent = work.classList.contains("open") ? "Ocultar" : "Ver pasos";
+      });
+    });
+
+    let currentFilter = "Todos";
+    const filterNames = ["Todos", "Sustitución", "Igualación", "Reducción", "Libre"];
+
+    function renderFilters(){
+      document.querySelector("#filters").innerHTML = filterNames.map(name =>
+        `<button class="btn ${currentFilter === name ? "primary" : ""}" data-filter="${name}">${name}</button>`
+      ).join("");
+      document.querySelectorAll("[data-filter]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          currentFilter = btn.dataset.filter;
+          renderFilters();
+          renderExercises();
+        });
+      });
+    }
+
+    function renderExercises(){
+      const items = currentFilter === "Todos" ? exerciseBank : exerciseBank.filter(e => e.method === currentFilter);
+      document.querySelector("#exercises").innerHTML = items.map(item => `
+        <article class="exercise-card">
+          <div class="exercise-head">
+            <div><div class="eyebrow">Ejercicio ${item.id}</div><div style="font-weight:900;color:var(--slate-800)">${item.method}</div></div>
+            <button class="btn toggle-answer" data-answer="${item.id}">Solución</button>
+          </div>
+          ${systemBox(item.system)}
+          <div class="hidden-answer" id="answer-${item.id}">${item.answer}</div>
+        </article>
+      `).join("");
+      document.querySelectorAll(".toggle-answer").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const answer = document.querySelector(`#answer-${CSS.escape(btn.dataset.answer)}`);
+          answer.classList.toggle("open");
+          btn.textContent = answer.classList.contains("open") ? "Ocultar" : "Solución";
+        });
+      });
+    }
+
+    renderFilters();
+    renderExercises();
+
+    document.querySelector("#quiz").innerHTML = quiz.map((item, index) => `
+      <article class="quiz-card" data-quiz="${index}">
+        <div class="quiz-title">
+          <div class="quiz-num">${index + 1}</div>
+          <h3 style="font-size:16px">${item.q}</h3>
+        </div>
+        <div class="options">
+          ${item.options.map((option, i) => `<button class="option" data-quiz-option="${index}" data-option="${i}"><span>${option}</span><span class="mark"></span></button>`).join("")}
+        </div>
+      </article>
+    `).join("");
+
+    document.querySelectorAll("[data-quiz-option]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const qIndex = Number(btn.dataset.quizOption);
+        const selected = Number(btn.dataset.option);
+        const item = quiz[qIndex];
+        document.querySelectorAll(`[data-quiz-option="${qIndex}"]`).forEach(optionBtn => {
+          const optionIndex = Number(optionBtn.dataset.option);
+          optionBtn.classList.remove("correct", "wrong", "dim");
+          optionBtn.querySelector(".mark").innerHTML = "";
+          if (optionIndex === item.ok) {
+            optionBtn.classList.add("correct");
+            optionBtn.querySelector(".mark").innerHTML = icon("check");
+          } else if (optionIndex === selected) {
+            optionBtn.classList.add("wrong");
+            optionBtn.querySelector(".mark").innerHTML = icon("x");
+          } else {
+            optionBtn.classList.add("dim");
+          }
+          const svg = optionBtn.querySelector(".mark svg");
+          if (svg) { svg.style.width = "20px"; svg.style.height = "20px"; }
+        });
+      });
+    });
+
+    const selfTests = [
+      { name: "Hay 16 ejercicios, como en la ficha original", pass: exerciseBank.length === 16 },
+      { name: "Los filtros principales existen", pass: ["Sustitución", "Igualación", "Reducción", "Libre"].every(method => exerciseBank.some(exercise => exercise.method === method)) },
+      { name: "El ejemplo inicial tiene solución (4, 1)", pass: 4 + 1 === 5 && 2 * 4 + 1 === 9 },
+      { name: "El ejercicio 1a cumple las dos ecuaciones con (2, 3)", pass: 2 + 3 * 3 === 11 && 2 * 2 - 3 === 1 },
+      { name: "Todas las preguntas del test tienen una respuesta válida", pass: quiz.every(item => Number.isInteger(item.ok) && item.ok >= 0 && item.ok < item.options.length) },
+    ];
+    const allPass = selfTests.every(t => t.pass);
+    document.querySelector("#testSummary").textContent = `Tests internos: ${allPass ? "todo correcto" : "revisar"}`;
+    document.querySelector("#selfTests").innerHTML = selfTests.map(t =>
+      `<div class="test-line"><span class="${t.pass ? "ok" : "bad"}">${icon(t.pass ? "check" : "x")}</span><span>${t.name}</span></div>`
+    ).join("");
+    document.querySelectorAll("#selfTests svg").forEach(svg => { svg.style.width = "16px"; svg.style.height = "16px"; });
+  </script>
+</body>
+</html>
