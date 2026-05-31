@@ -94,6 +94,43 @@ const exercises = [
     equations: "2x - 2y = 5\n4x - 4y = 14", type: "choice", options: ["Una solución", "Infinitas soluciones", "Sin solución"], answer: "Sin solución",
     hint: "Al duplicar la primera ecuación obtendrías 4x - 4y = 10, no 14.",
     explanation: "Las rectas tienen la misma pendiente pero distinta ordenada en el origen. Son paralelas: no existe solución común."
+  },
+  {
+    level: "Nivel 6", levelTitle: "Plantea el sistema tú mismo", levelIntro: "En estos problemas no te damos las ecuaciones. Decide qué representa cada incógnita, traduce las dos pistas y resuelve.",
+    title: "Cuadernos de dos tamaños", tag: "Planteamiento", prompt: "Una libreta grande cuesta 1,50 € más que una pequeña. Dos libretas pequeñas cuestan 1 € más que una grande. ¿Cuánto cuesta cada libreta?",
+    equations: "", type: "labels", labels: ["grande (€)", "pequeña (€)"], answer: [4, 2.5],
+    hint: "Llama g al precio de la grande y p al de la pequeña. Traduce por separado «1,50 € más» y «1 € más».",
+    explanation: "Planteamos g = p + 1,5 y 2p = g + 1. Sustituyendo: 2p = p + 2,5 → p = 2,5. Entonces g = 4."
+  },
+  {
+    level: "Nivel 6", title: "Monedas en una hucha", tag: "Planteamiento", prompt: "En una hucha hay 23 monedas, todas de 1 € o de 2 €. En total suman 37 €. ¿Cuántas monedas hay de cada tipo?",
+    equations: "", type: "labels", labels: ["monedas de 1 €", "monedas de 2 €"], answer: [9, 14],
+    hint: "Una ecuación cuenta monedas. La otra cuenta euros.",
+    explanation: "Si x son monedas de 1 € e y monedas de 2 €: x + y = 23 y x + 2y = 37. Restando ambas ecuaciones: y = 14; por tanto x = 9."
+  },
+  {
+    level: "Nivel 6", title: "Rectángulo", tag: "Planteamiento", prompt: "El perímetro de un rectángulo es 46 cm. La base mide 5 cm más que la altura. ¿Cuánto miden la base y la altura?",
+    equations: "", type: "labels", labels: ["base (cm)", "altura (cm)"], answer: [14, 9],
+    hint: "Recuerda que el perímetro de un rectángulo es 2·base + 2·altura.",
+    explanation: "Planteamos 2b + 2h = 46 y b = h + 5. Sustituyendo: 2(h + 5) + 2h = 46 → 4h = 36 → h = 9 y b = 14."
+  },
+  {
+    level: "Nivel 6", title: "Excursión en autobús", tag: "Planteamiento", prompt: "El alquiler de un autobús cuesta 300 €. Si se apuntan 8 alumnos más, cada alumno paga 1,25 € menos. ¿Cuántos alumnos estaban apuntados al principio y cuánto pagaba cada uno?",
+    equations: "", type: "labels", labels: ["alumnos iniciales", "precio inicial (€)"], answer: [40, 7.5],
+    hint: "Usa n para el número inicial de alumnos y p para el precio inicial. El coste total no cambia.",
+    explanation: "Planteamos n·p = 300 y (n + 8)(p - 1,25) = 300. Como p = 300/n, al resolver obtenemos n = 40 y p = 7,50 €."
+  },
+  {
+    level: "Nivel 6", title: "Dos números", tag: "Planteamiento", prompt: "La suma de dos números es 55 y su diferencia es 7. ¿Cuáles son esos números?",
+    equations: "", type: "labels", labels: ["número mayor", "número menor"], answer: [31, 24],
+    hint: "Usa una ecuación para la suma y otra para «mayor menos menor».",
+    explanation: "Planteamos x + y = 55 y x - y = 7. Sumando: 2x = 62 → x = 31. Entonces y = 24."
+  },
+  {
+    level: "Nivel 6", title: "Cruce de vehículos", tag: "Planteamiento", prompt: "Barcelona y Valencia están separadas 350 km. Un coche sale de Barcelona a 110 km/h y una moto sale a la vez desde Valencia a 90 km/h. ¿Cuántas horas tardan en cruzarse y cuántos kilómetros recorre el coche?",
+    equations: "", type: "labels", labels: ["tiempo (h)", "distancia coche (km)"], answer: [1.75, 192.5],
+    hint: "La suma de las dos distancias recorridas es 350 km. Ambas dependen del mismo tiempo.",
+    explanation: "Si t es el tiempo: 110t + 90t = 350 → 200t = 350 → t = 1,75 h. El coche recorre 110·1,75 = 192,5 km."
   }
 ];
 
@@ -139,6 +176,21 @@ function updateProgress() {
   document.querySelector("#progress-bar").style.width = `${done.size / exercises.length * 100}%`;
   localStorage.setItem("systems-progress", JSON.stringify([...done]));
 }
+
+document.querySelector("#reset-progress").addEventListener("click", () => {
+  if (!confirm("¿Quieres borrar todo el progreso de esta práctica?")) return;
+  done.clear();
+  localStorage.removeItem("systems-progress");
+  document.querySelectorAll(".exercise--done").forEach((card) => card.classList.remove("exercise--done"));
+  document.querySelectorAll(".feedback").forEach((feedback) => {
+    feedback.className = "feedback";
+    feedback.textContent = "";
+  });
+  document.querySelectorAll(".explanation--visible").forEach((explanation) => explanation.classList.remove("explanation--visible"));
+  document.querySelectorAll("input").forEach((field) => { field.value = ""; });
+  document.querySelectorAll("select").forEach((field) => { field.value = ""; });
+  updateProgress();
+});
 
 const groups = exercises.reduce((result, exercise, index) => {
   (result[exercise.level] ||= []).push({ exercise, index });

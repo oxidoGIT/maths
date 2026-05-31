@@ -37,6 +37,8 @@ h3 { letter-spacing: -.035em; }
 .progress div:first-child { display: flex; justify-content: space-between; gap: 16px; font-size: .9rem; }
 .progress__track { overflow: hidden; height: 9px; margin-top: 9px; border-radius: 99px; background: rgba(255,255,255,.18); }
 #progress-bar { display: block; width: 0; height: 100%; border-radius: inherit; background: #a5d0bc; transition: width 200ms ease; }
+.reset-progress { margin-top: 14px; border: 1px solid rgba(255,255,255,.42); border-radius: 99px; padding: 7px 11px; background: transparent; color: #e5f1eb; cursor: pointer; font: inherit; font-size: .82rem; font-weight: 700; }
+.reset-progress:hover { background: rgba(255,255,255,.1); }
 main { padding: 52px 0 80px; }
 .theory, .method-guide, .level { margin-bottom: 54px; }
 .theory .eyebrow, .method-guide .eyebrow, .level .eyebrow { margin-top: 0; color: var(--accent); }
@@ -64,6 +66,7 @@ main { padding: 52px 0 80px; }
 .exercise__title { margin-bottom: 5px; font-size: 1.2rem; }
 .exercise__prompt { color: var(--muted); font-size: .94rem; }
 .equations { margin: 14px 0; border-radius: 11px; padding: 14px; background: #f1eee8; font: 700 1rem/1.55 monospace; white-space: pre-wrap; }
+.equations:empty { display: none; }
 .answer { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-bottom: 14px; }
 .answer label { display: flex; align-items: center; gap: 5px; color: var(--muted); font-size: .88rem; font-weight: 700; }
 .answer input, .answer select {
