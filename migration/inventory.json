@@ -1,0 +1,21 @@
+{
+  "source": "https://sites.google.com/view/index2eso/inicio",
+  "updatedAt": "2026-05-31T14:28:08+02:00",
+  "summary": {
+    "discoveredInternalIndexPages": 1,
+    "migratedInternalIndexPages": 0,
+    "blockedInternalIndexPages": 1,
+    "pendingInternalIndexPages": 0,
+    "preservedExternalLinks": 0
+  },
+  "pages": [
+    {
+      "url": "https://sites.google.com/view/index2eso/inicio",
+      "kind": "internal-index",
+      "status": "blocked",
+      "localPath": null,
+      "reason": "Source inspection is unavailable: the configured browser policy blocks sites.google.com and the sandbox cannot resolve the domain."
+    }
+  ],
+  "externalLinks": []
+}
