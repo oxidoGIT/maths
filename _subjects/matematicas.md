@@ -23,4 +23,4 @@ language: es
 
 ## 3. Sistemas de ecuaciones lineales
 
-* [Sistemas de ecuaciones](/markel/markel/sistemas-ecuaciones.html)
+* [Sistemas de ecuaciones](sistemas-ecuaciones.html)
