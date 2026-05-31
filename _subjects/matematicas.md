@@ -23,4 +23,4 @@ language: es
 
 ## 3. Sistemas de ecuaciones lineales
 
-- [Sistemas de ecuaciones](https://chatgpt.com/canvas/shared/6a19d32a43188191a3ca2a2655142d5b)
+- [Sistemas de ecuaciones](../sistemas-ecuaciones.html)

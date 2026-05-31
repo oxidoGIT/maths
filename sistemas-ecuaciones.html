@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistemas de ecuaciones · Práctica interactiva</title>
+    <link rel="stylesheet" href="sistemas-ecuaciones.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="matematicas.html">← Volver a Matemáticas</a>
+        <p class="eyebrow">Matemáticas · 2º ESO</p>
+        <h1>Sistemas de ecuaciones lineales</h1>
+        <p class="hero__intro">
+          Aprende a resolver dos ecuaciones con dos incógnitas paso a paso.
+          Empieza por lo esencial y sube de nivel a tu ritmo.
+        </p>
+        <div class="progress">
+          <div>
+            <span id="progress-label">0 de 15 ejercicios completados</span>
+            <strong id="score-label">0 puntos</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="theory">
+        <div>
+          <p class="eyebrow">Antes de empezar</p>
+          <h2>La idea clave</h2>
+          <p>
+            Un sistema reúne dos ecuaciones. La solución es la pareja
+            <strong>(x, y)</strong> que hace verdaderas las dos a la vez.
+          </p>
+        </div>
+        <div class="theory__cards">
+          <article>
+            <span>01</span>
+            <h3>Una solución</h3>
+            <p>Las dos rectas se cortan en un punto. Es un sistema compatible determinado.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Infinitas soluciones</h3>
+            <p>Las rectas coinciden. Es un sistema compatible indeterminado.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Sin solución</h3>
+            <p>Las rectas son paralelas. Es un sistema incompatible.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-guide">
+        <p class="eyebrow">Chuleta rápida</p>
+        <h2>¿Qué método elijo?</h2>
+        <div class="method-grid">
+          <article><strong>Sustitución</strong><span>Cuando puedes despejar fácilmente x o y.</span></article>
+          <article><strong>Igualación</strong><span>Cuando es sencillo despejar la misma incógnita en las dos ecuaciones.</span></article>
+          <article><strong>Reducción</strong><span>Cuando puedes sumar o restar las ecuaciones para eliminar una incógnita.</span></article>
+        </div>
+      </section>
+
+      <section class="levels" id="levels"></section>
+    </main>
+
+    <template id="exercise-template">
+      <article class="exercise">
+        <div class="exercise__top">
+          <span class="exercise__number"></span>
+          <span class="exercise__tag"></span>
+        </div>
+        <h3 class="exercise__title"></h3>
+        <p class="exercise__prompt"></p>
+        <pre class="equations"></pre>
+        <div class="answer"></div>
+        <div class="exercise__actions">
+          <button class="button check" type="button">Comprobar</button>
+          <button class="button button--soft hint" type="button">Pista</button>
+          <button class="button button--ghost solution" type="button">Ver solución</button>
+        </div>
+        <p class="feedback" role="status"></p>
+        <div class="explanation"></div>
+      </article>
+    </template>
+
+    <script src="sistemas-ecuaciones.js"></script>
+  </body>
+</html>
