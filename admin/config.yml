@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: oxidoGIT/markel
+  branch: main
+
+site_url: https://oxidogit.github.io/markel/
+display_url: https://oxidogit.github.io/markel/
+
+media_folder: assets/uploads
+public_folder: /markel/assets/uploads
+
+collections:
+  - name: settings
+    label: Portada
+    files:
+      - name: site
+        label: Textos de la portada
+        file: _data/site.yml
+        fields:
+          - { label: Título del sitio, name: title, widget: string }
+          - { label: Etiqueta superior, name: eyebrow, widget: string }
+          - { label: Titular, name: heading, widget: string }
+          - { label: Introducción, name: intro, widget: text }
+
+  - name: subjects
+    label: Asignaturas
+    label_singular: Asignatura
+    folder: _subjects
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{order}} · {{title}}"
+    sortable_fields: [order, title]
+    fields:
+      - { label: Nombre, name: title, widget: string }
+      - { label: Orden, name: order, widget: number, value_type: int, min: 1 }
+      - { label: Idioma, name: language, widget: select, options: [es, ca], default: es }
+      - label: Contenido
+        name: body
+        widget: richtext
+        modes: [rich_text, raw]
+        buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list]
+        editor_components: []

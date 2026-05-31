@@ -1,45 +1,31 @@
+---
+---
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asignaturas 2º ESO</title>
+    <title>{{ site.data.site.title }}</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="site-header__inner">
-        <a class="brand" href="index.html">Asignaturas 2º ESO</a>
+        <a class="brand" href="index.html">{{ site.data.site.title }}</a>
       </div>
     </header>
     <main class="page">
-      <p class="eyebrow">La Ginesta · 2º ESO</p>
-      <h1>Todo lo necesario para estudiar con buena nota.</h1>
-      <p class="intro">
-        Selecciona una asignatura para consultar los temas, explicaciones y
-        ejercicios disponibles.
-      </p>
+      <p class="eyebrow">{{ site.data.site.eyebrow }}</p>
+      <h1>{{ site.data.site.heading }}</h1>
+      <p class="intro">{{ site.data.site.intro }}</p>
       <nav class="grid" aria-label="Asignaturas">
-        <a class="card" href="matematicas.html">
-          <span class="card__number">01</span>
-          <span class="card__title">Matemáticas</span>
+        {% assign subjects = site.subjects | sort: "order" %}
+        {% for subject in subjects %}
+        <a class="card" href="{{ subject.url | relative_url }}">
+          <span class="card__number">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
+          <span class="card__title">{{ subject.title }}</span>
         </a>
-        <a class="card" href="science.html">
-          <span class="card__number">02</span>
-          <span class="card__title">Science</span>
-        </a>
-        <a class="card" href="catala.html">
-          <span class="card__number">03</span>
-          <span class="card__title">Català</span>
-        </a>
-        <a class="card" href="castella.html">
-          <span class="card__number">04</span>
-          <span class="card__title">Castellà</span>
-        </a>
-        <a class="card" href="socials.html">
-          <span class="card__number">05</span>
-          <span class="card__title">Socials</span>
-        </a>
+        {% endfor %}
       </nav>
     </main>
   </body>
