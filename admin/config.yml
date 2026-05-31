@@ -2,6 +2,8 @@ backend:
   name: github
   repo: oxidoGIT/markel
   branch: main
+  base_url: https://markel-decap-oauth.iker-bc.workers.dev
+  auth_endpoint: auth
 
 site_url: https://oxidogit.github.io/markel/
 display_url: https://oxidogit.github.io/markel/
