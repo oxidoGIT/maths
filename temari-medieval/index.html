@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temari medieval interactiu</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Socials · 2n d'ESO</p>
+        <h1>La formació d'Europa medieval</h1>
+      </div>
+      <div class="progress-shell" aria-label="Progrés de l'estudi">
+        <span id="progressLabel">0% completat</span>
+        <div class="progress-track"><span id="progressBar"></span></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <nav class="sidebar" aria-label="Seccions del temari">
+        <a href="#inici" class="nav-link active">Inici</a>
+        <a href="#vikings" class="nav-link">6.4 Vikings</a>
+        <a href="#cultura" class="nav-link">6.5 Cultura</a>
+        <a href="#amor" class="nav-link">Amor cortès</a>
+        <a href="#croades" class="nav-link">7.1-7.2 Croades</a>
+        <a href="#bancs" class="nav-link">7.3 Bancs</a>
+        <a href="#gremis" class="nav-link">7.4 Gremis</a>
+        <a href="#repass" class="nav-link">Repàs final</a>
+      </nav>
+
+      <div class="content">
+        <section id="inici" class="section intro">
+          <div class="intro-copy">
+            <p class="eyebrow">Guia d'estudi</p>
+            <h2>Estudia per blocs petits i comprova que ho has entès.</h2>
+            <p>
+              Aquesta web segueix el temari final corregit. Cada secció combina
+              idees clau, una petita escena visual, preguntes tipus test i
+              activitats per desenvolupar. La rúbrica queda al fons: ajuda a
+              recordar que cal situar els fets en el temps, explicar conceptes i
+              escriure amb cura.
+            </p>
+            <img class="intro-visual" src="assets/medieval-scene.png" alt="Il·lustració esquemàtica d'Europa medieval amb rutes, cultura i croades">
+          </div>
+          <div class="study-panel">
+            <h3>Abans de començar</h3>
+            <ul class="check-list">
+              <li>Memoritza els segles importants: IX-XIII i XI-XIII.</li>
+              <li>Relaciona cada tema amb una paraula clau.</li>
+              <li>Després de cada bloc, fes els exercicis sense mirar.</li>
+            </ul>
+            <button class="primary-action" data-scroll="#vikings">Començar pels Vikings</button>
+          </div>
+        </section>
+
+        <section class="timeline-section" aria-labelledby="timelineTitle">
+          <div class="section-head">
+            <p class="eyebrow">Cronologia essencial</p>
+            <h2 id="timelineTitle">Una línia del temps per no perdre's</h2>
+          </div>
+          <div class="timeline">
+            <button class="time-dot" data-time="Segles IX-XIII" data-note="Expansió dels vikings per Europa.">
+              <span>IX-XIII</span>
+            </button>
+            <button class="time-dot" data-time="1095" data-note="El papa Urbà II impulsa la primera croada al concili de Clermont.">
+              <span>1095</span>
+            </button>
+            <button class="time-dot" data-time="1099" data-note="Els cavallers cristians prenen Jerusalem i funden un regne cristià.">
+              <span>1099</span>
+            </button>
+            <button class="time-dot" data-time="1187" data-note="Saladino reconquesta Jerusalem després de Hattin.">
+              <span>1187</span>
+            </button>
+            <button class="time-dot" data-time="Segles XI-XII" data-note="Creixen les universitats, les fires, els bancs i les lletres de canvi.">
+              <span>XI-XII</span>
+            </button>
+          </div>
+          <div id="timelineNote" class="note-box">Tria una data per veure per què és important.</div>
+        </section>
+
+        <section id="vikings" class="section topic" data-section="vikings">
+          <div class="section-head">
+            <p class="eyebrow">6.4</p>
+            <h2>Els Vikings</h2>
+            <p>Un poble d'origen escandinau que va expandir-se per Europa entre els segles IX i XIII.</p>
+          </div>
+
+          <div class="two-column">
+            <article class="learn-block">
+              <h3>Origen i estereotips</h3>
+              <p>
+                Els Vikings provenien de l'actual Escandinàvia. La seva imatge
+                ha estat deformada pel còmic, el cinema i les òperes de Richard
+                Wagner: no eren només guerrers, també eren navegants,
+                comerciants i creadors de cultura.
+              </p>
+              <h3>Expansió i economia</h3>
+              <p>
+                Es van expandir cap a França, Rússia, Anglaterra, Bretanya i el
+                sud d'Itàlia. Comerciaven amb productes agrícoles i amb materials
+                com l'ambre rus i la pell de marta.
+              </p>
+              <h3>Cultura i política</h3>
+              <p>
+                Tenien sagues escrites en rúnic i una religió politeista amb
+                Thor, Odin, Loki i Freya. Políticament, apareixen relacionats amb
+                Normandia, Anglaterra i Sicília.
+              </p>
+            </article>
+            <div class="visual-map" aria-label="Mapa esquematic de rutes vikingues">
+              <div class="sea"></div>
+              <span class="place north">Escandinàvia</span>
+              <span class="place west">Anglaterra</span>
+              <span class="place center">Normandia</span>
+              <span class="place east">Rússia</span>
+              <span class="place south">Sicília</span>
+              <span class="route r1"></span>
+              <span class="route r2"></span>
+              <span class="route r3"></span>
+              <span class="route r4"></span>
+            </div>
+          </div>
+
+          <div class="key-grid">
+            <div class="key-card"><strong>Paraula clau</strong><span>Navegants i comerciants</span></div>
+            <div class="key-card"><strong>Cultura</strong><span>Sagues, rúnic i Valhalla</span></div>
+            <div class="key-card"><strong>Política</strong><span>Normandia, Hastings i Roger II</span></div>
+          </div>
+
+          <div class="exercise-set" data-quiz="vikings">
+            <h3>Exercicis dels Vikings</h3>
+            <div class="quiz-card" data-answer="b">
+              <p>1. Quin era l'origen dels Vikings?</p>
+              <label><input type="radio" name="v1" value="a"> El nord d'Àfrica</label>
+              <label><input type="radio" name="v1" value="b"> L'actual Escandinàvia</label>
+              <label><input type="radio" name="v1" value="c"> L'Imperi bizantí</label>
+            </div>
+            <div class="quiz-card" data-answer="c">
+              <p>2. Quin element mostra que els Vikings tenien cultura pròpia?</p>
+              <label><input type="radio" name="v2" value="a"> Les lletres de canvi</label>
+              <label><input type="radio" name="v2" value="b"> El concili de Clermont</label>
+              <label><input type="radio" name="v2" value="c"> Les sagues i la religió politeista</label>
+            </div>
+            <div class="write-card">
+              <p>3. Desenvolupa: explica per què dir que els Vikings només eren guerrers és un estereotip.</p>
+              <textarea aria-label="Resposta sobre estereotips dels Vikings"></textarea>
+              <button class="ghost-action" data-model="Els Vikings també eren navegants, comerciants, tenien literatura pròpia amb les sagues, religió politeista i objectius polítics en territoris com Normandia, Anglaterra o Sicília.">Veure resposta model</button>
+              <p class="model-answer"></p>
+            </div>
+            <button class="check-action">Corregir test</button>
+            <p class="quiz-result"></p>
+          </div>
+        </section>
+
+        <section id="cultura" class="section topic" data-section="cultura">
+          <div class="section-head">
+            <p class="eyebrow">6.5</p>
+            <h2>Pensament i cultura</h2>
+            <p>El coneixement medieval no només vivia als monestirs: també creixia a les ciutats.</p>
+          </div>
+
+          <div class="split-list">
+            <article>
+              <h3>Monestirs i abadies</h3>
+              <p>
+                Eren centres religiosos dirigits per monjos i monges. Protegien
+                el coneixement mitjançant traduccions. Figures com Roswitha i
+                Hildegarden de Bingen mostren que també hi havia dones cultes.
+              </p>
+            </article>
+            <article>
+              <h3>Universitats</h3>
+              <p>
+                Entre els segles XI i XII apareixen universitats a ciutats com
+                Bolonya, París, Oxford o Lleida. Usaven el llatí i el mètode de
+                l'escolàstica, basat en el diàleg entre professor i alumne.
+              </p>
+            </article>
+          </div>
+
+          <div class="concept-strip">
+            <button class="concept-pill active" data-concept="monestirs">Monestirs</button>
+            <button class="concept-pill" data-concept="universitats">Universitats</button>
+            <button class="concept-pill" data-concept="escolastica">Escolàstica</button>
+            <button class="concept-pill" data-concept="novelles">Novel·les</button>
+          </div>
+          <div id="conceptText" class="note-box">Monestirs i abadies conservaven i traduïen el coneixement.</div>
+
+          <div class="exercise-set" data-quiz="cultura">
+            <h3>Exercicis de pensament i cultura</h3>
+            <div class="quiz-card" data-answer="a">
+              <p>1. On es conservava gran part del coneixement religiós?</p>
+              <label><input type="radio" name="c1" value="a"> Als monestirs i abadies</label>
+              <label><input type="radio" name="c1" value="b"> Als gremis de comerciants</label>
+              <label><input type="radio" name="c1" value="c"> A les croades</label>
+            </div>
+            <div class="quiz-card" data-answer="b">
+              <p>2. Què era l'escolàstica?</p>
+              <label><input type="radio" name="c2" value="a"> Una ruta comercial d'Orient</label>
+              <label><input type="radio" name="c2" value="b"> Un mètode d'ensenyament basat en el diàleg</label>
+              <label><input type="radio" name="c2" value="c"> Una orde de cavallers</label>
+            </div>
+            <div class="write-card">
+              <p>3. Desenvolupa: compara monestirs i universitats com a centres de coneixement.</p>
+              <textarea aria-label="Resposta sobre monestirs i universitats"></textarea>
+              <button class="ghost-action" data-model="Els monestirs i abadies protegien el coneixement religiós i feien traduccions. Les universitats apareixen a les ciutats, usen el llatí i organitzen els estudiants segons l'origen, amb l'escolàstica com a mètode.">Veure resposta model</button>
+              <p class="model-answer"></p>
+            </div>
+            <button class="check-action">Corregir test</button>
+            <p class="quiz-result"></p>
+          </div>
+        </section>
+
+        <section id="amor" class="section topic" data-section="amor">
+          <div class="section-head">
+            <p class="eyebrow">Literatura medieval</p>
+            <h2>L'amor cortès</h2>
+            <p>Un gènere literari del segle XII lligat a Leonor d'Aquitània i a la cultura aristocràtica.</p>
+          </div>
+
+          <div class="story-board">
+            <div class="story-step"><span>1</span><strong>Triangle amorós</strong><p>Un amor prohibit amb secret i tensió.</p></div>
+            <div class="story-step"><span>2</span><strong>Dona idealitzada</strong><p>El cavaller pateix i la converteix en protagonista.</p></div>
+            <div class="story-step"><span>3</span><strong>Trobadors i joglars</strong><p>Uns componien poemes; els altres els cantaven.</p></div>
+          </div>
+
+          <div class="exercise-set" data-quiz="amor">
+            <h3>Exercicis de l'amor cortès</h3>
+            <div class="quiz-card" data-answer="c">
+              <p>1. Quin element és propi de l'amor cortès?</p>
+              <label><input type="radio" name="a1" value="a"> La fundació de bancs</label>
+              <label><input type="radio" name="a1" value="b"> La conquesta de Jerusalem</label>
+              <label><input type="radio" name="a1" value="c"> Un amor prohibit i idealitzat</label>
+            </div>
+            <div class="quiz-card" data-answer="a">
+              <p>2. Qui cantava les composicions?</p>
+              <label><input type="radio" name="a2" value="a"> Els joglars</label>
+              <label><input type="radio" name="a2" value="b"> Els banquers</label>
+              <label><input type="radio" name="a2" value="c"> Els templers</label>
+            </div>
+            <div class="write-card">
+              <p>3. Desenvolupa: explica el paper de la dona i del cavaller en l'amor cortès.</p>
+              <textarea aria-label="Resposta sobre amor cortès"></textarea>
+              <button class="ghost-action" data-model="La dona és la protagonista d'una història secreta i idealitzada. El cavaller l'estima, la idealitza i pateix per aquest amor, que normalment es presenta com a prohibit.">Veure resposta model</button>
+              <p class="model-answer"></p>
+            </div>
+            <button class="check-action">Corregir test</button>
+            <p class="quiz-result"></p>
+          </div>
+        </section>
+
+        <section id="croades" class="section topic" data-section="croades">
+          <div class="section-head">
+            <p class="eyebrow">7.1 - 7.2</p>
+            <h2>Les Croades</h2>
+            <p>Expedicions polítiques, militars i comercials organitzades per l'Església entre els segles XI i XIII.</p>
+          </div>
+
+          <div class="two-column">
+            <article class="learn-block">
+              <h3>Què van ser?</h3>
+              <p>
+                Les Croades buscaven control social, lluita contra l'infidel i
+                domini de les rutes comercials d'Orient. El 1095, el papa Urbà
+                II impulsa una expedició des del concili de Clermont per ajudar
+                l'imperi Bizantí i conquerir Jerusalem.
+              </p>
+              <h3>Motivacions i conseqüències</h3>
+              <p>
+                Hi havia motius religiosos, polítics i econòmics. Les Croades
+                van provocar pelegrinatges, ordes de cavallers, intercanvis
+                culturals i també radicalització religiosa.
+              </p>
+            </article>
+            <div class="cause-wheel" aria-label="Tres motivacions de les Croades">
+              <div class="wheel-center">Croades</div>
+              <span class="wheel-item w1">Religió</span>
+              <span class="wheel-item w2">Política</span>
+              <span class="wheel-item w3">Comerç</span>
+            </div>
+          </div>
+
+          <div class="memory-line">
+            <span><strong>1095</strong> Urbà II i Clermont</span>
+            <span><strong>1099</strong> Jerusalem cristiàna</span>
+            <span><strong>1187</strong> Saladino i Hattin</span>
+          </div>
+
+          <div class="exercise-set" data-quiz="croades">
+            <h3>Exercicis de les Croades</h3>
+            <div class="quiz-card" data-answer="b">
+              <p>1. Quin any s'impulsa la primera croada al concili de Clermont?</p>
+              <label><input type="radio" name="cr1" value="a"> 1066</label>
+              <label><input type="radio" name="cr1" value="b"> 1095</label>
+              <label><input type="radio" name="cr1" value="c"> 1300</label>
+            </div>
+            <div class="quiz-card" data-answer="a">
+              <p>2. Quin producte era important per a les indústries tèxtils?</p>
+              <label><input type="radio" name="cr2" value="a"> L'alum</label>
+              <label><input type="radio" name="cr2" value="b"> El Grial</label>
+              <label><input type="radio" name="cr2" value="c"> La pell de marta</label>
+            </div>
+            <div class="write-card">
+              <p>3. Desenvolupa: explica dues motivacions i dues conseqüències de les Croades.</p>
+              <textarea aria-label="Resposta sobre motivacions i conseqüències de les Croades"></textarea>
+              <button class="ghost-action" data-model="Motivacions: protegir l'imperi Bizantí, conquerir Jerusalem, reforcar el poder de l'Església i controlar rutes comercials d'Orient. Conseqüències: pelegrinatges, ordes de cavallers, intercanvis culturals, negoci de la guerra i radicalització religiosa.">Veure resposta model</button>
+              <p class="model-answer"></p>
+            </div>
+            <button class="check-action">Corregir test</button>
+            <p class="quiz-result"></p>
+          </div>
+        </section>
+
+        <section id="bancs" class="section topic" data-section="bancs">
+          <div class="section-head">
+            <p class="eyebrow">7.3</p>
+            <h2>Institucions: els bancs</h2>
+            <p>Les fires, el comerç i les lletres de canvi van transformar l'economia medieval.</p>
+          </div>
+
+          <div class="definition-row">
+            <div>
+              <h3>Bancs</h3>
+              <p>Institucions creades per intercanviar moneda i protegir els estalvis de les persones.</p>
+            </div>
+            <div>
+              <h3>Lletres de canvi</h3>
+              <p>Documents que permetien cobrar diners en diferents territoris i facilitaven la mobilitat econòmica.</p>
+            </div>
+            <div>
+              <h3>Fires</h3>
+              <p>Espais comercials on s'acostumaven a vendre productes.</p>
+            </div>
+          </div>
+
+          <div class="exercise-set" data-quiz="bancs">
+            <h3>Exercicis de bancs i comerç</h3>
+            <div class="quiz-card" data-answer="c">
+              <p>1. Per què es creen els bancs?</p>
+              <label><input type="radio" name="b1" value="a"> Per escriure sagues</label>
+              <label><input type="radio" name="b1" value="b"> Per organitzar croades només religioses</label>
+              <label><input type="radio" name="b1" value="c"> Per intercanviar moneda i protegir estalvis</label>
+            </div>
+            <div class="quiz-card" data-answer="a">
+              <p>2. Què permetien les lletres de canvi?</p>
+              <label><input type="radio" name="b2" value="a"> Cobrar en diferents territoris</label>
+              <label><input type="radio" name="b2" value="b"> Entrar al Valhalla</label>
+              <label><input type="radio" name="b2" value="c"> Fundar una universitat</label>
+            </div>
+            <div class="write-card">
+              <p>3. Desenvolupa: explica la relació entre fires, bancs i lletres de canvi.</p>
+              <textarea aria-label="Resposta sobre bancs i lletres de canvi"></textarea>
+              <button class="ghost-action" data-model="A les fires es venien productes i hi havia necessitat d'intercanviar moneda. Els bancs protegien estalvis i facilitaven operacions. Les lletres de canvi permetien cobrar en altres territoris sense portar sempre diners a sobre.">Veure resposta model</button>
+              <p class="model-answer"></p>
+            </div>
+            <button class="check-action">Corregir test</button>
+            <p class="quiz-result"></p>
+          </div>
+        </section>
+
+        <section id="gremis" class="section topic" data-section="gremis">
+          <div class="section-head">
+            <p class="eyebrow">7.4</p>
+            <h2>Els gremis</h2>
+            <p>Organitzacions de comerciants i artesans que regulaven oficis i productes.</p>
+          </div>
+
+          <div class="guild-board">
+            <div><strong>Qui?</strong><span>Comerciants i artesans</span></div>
+            <div><strong>Exemples</strong><span>Metges, llana, mestres de l'or</span></div>
+            <div><strong>Funcions</strong><span>Formar, protegir condicions i vendre a fires</span></div>
+          </div>
+
+          <div class="exercise-set" data-quiz="gremis">
+            <h3>Exercicis dels gremis</h3>
+            <div class="quiz-card" data-answer="b">
+              <p>1. Què eren els gremis?</p>
+              <label><input type="radio" name="g1" value="a"> Un gènere literari</label>
+              <label><input type="radio" name="g1" value="b"> Organitzacions de comerciants i artesans</label>
+              <label><input type="radio" name="g1" value="c"> Una expedició militar</label>
+            </div>
+            <div class="quiz-card" data-answer="c">
+              <p>2. Quina era una funció dels gremis?</p>
+              <label><input type="radio" name="g2" value="a"> Escriure en rúnic</label>
+              <label><input type="radio" name="g2" value="b"> Conquerir Jerusalem</label>
+              <label><input type="radio" name="g2" value="c"> protegir les condicions dels treballadors</label>
+            </div>
+            <div class="write-card">
+              <p>3. Desenvolupa: explica tres funcions dels gremis medievals.</p>
+              <textarea aria-label="Resposta sobre gremis"></textarea>
+              <button class="ghost-action" data-model="Els gremis formaven els treballadors, protegien les seves condicions com el salari i organitzaven la venda dels productes a les fires. També reunien comerciants i artesans d'oficis molt diferents.">Veure resposta model</button>
+              <p class="model-answer"></p>
+            </div>
+            <button class="check-action">Corregir test</button>
+            <p class="quiz-result"></p>
+          </div>
+        </section>
+
+        <section id="repass" class="section topic">
+          <div class="section-head">
+            <p class="eyebrow">Repàs final</p>
+            <h2>Comprova si ho tens al cap</h2>
+            <p>Fes servir aquestes targetes per repassar oralment abans de l'examen.</p>
+          </div>
+
+          <div class="flashcards">
+            <button class="flashcard" data-back="Segles IX-XIII. Origen escandinau, expansió, comerç, sagues i política.">
+              <span>Què cal recordar dels Vikings?</span>
+            </button>
+            <button class="flashcard" data-back="Monestirs, abadies i universitats; llatí, traduccions i escolàstica.">
+              <span>On es conserva el coneixement?</span>
+            </button>
+            <button class="flashcard" data-back="Expedicions religioses, polítiques i comercials entre els segles XI i XIII.">
+              <span>Què són les Croades?</span>
+            </button>
+            <button class="flashcard" data-back="Bancs: moneda i estalvis. Lletres de canvi: cobrar en diferents territoris.">
+              <span>Per què importen els bancs?</span>
+            </button>
+            <button class="flashcard" data-back="Organitzacions d'artesans i comerciants que formen, protegeixen i venen productes.">
+              <span>Què fan els gremis?</span>
+            </button>
+          </div>
+
+          <div class="final-challenge">
+            <h3>Repte de 10 minuts</h3>
+            <ol>
+              <li>Explica en veu alta una línia del temps amb cinc dates o períodes.</li>
+              <li>Defineix Vikings, escolàstica, Croades, bancs i gremis.</li>
+              <li>Escriu una resposta llarga sobre les Croades sense mirar els apunts.</li>
+            </ol>
+            <button class="primary-action" id="resetProgress">Reiniciar progrés</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
