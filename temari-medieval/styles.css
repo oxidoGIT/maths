@@ -213,6 +213,22 @@ button {
   padding-left: 1.1rem;
 }
 
+.rubric-mini {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.rubric-mini span {
+  padding: 0.45rem 0.55rem;
+  color: #e9f6f5;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .primary-action,
 .check-action,
 .ghost-action {
@@ -250,7 +266,7 @@ button {
 .timeline {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
   gap: 0.55rem;
   margin: 1.2rem 0;
 }
@@ -420,6 +436,92 @@ button {
   color: var(--muted);
 }
 
+.deep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.detail-card {
+  padding: 1rem;
+  background: linear-gradient(180deg, #ffffff, #f8fbfc);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.detail-card h3 {
+  margin: 0 0 0.55rem;
+  color: var(--teal-dark);
+  font-size: 1.05rem;
+}
+
+.detail-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.compact-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.05rem;
+  color: var(--muted);
+}
+
+.compare-lines {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.compare-lines p {
+  padding: 0.65rem;
+  background: #f2f6f8;
+  border-radius: 6px;
+}
+
+.path-infographic {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0.55rem;
+  margin: 1rem 0;
+  padding: 0.8rem;
+  background:
+    linear-gradient(90deg, rgba(20, 122, 126, 0.08), rgba(199, 138, 36, 0.1)),
+    #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.path-node {
+  padding: 0.85rem;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.path-node span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--wine);
+  font-weight: 900;
+}
+
+.path-node p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.path-arrow {
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
 .exercise-set {
   margin-top: 1.2rem;
   padding-top: 1.1rem;
@@ -547,6 +649,53 @@ a:focus-visible {
   background: var(--teal-dark);
 }
 
+.knowledge-map {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 8rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.knowledge-column {
+  min-height: 9.2rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.knowledge-column h3 {
+  margin: 0 0 0.45rem;
+  color: var(--indigo);
+}
+
+.knowledge-column p {
+  margin: 0 0 0.65rem;
+  color: var(--muted);
+}
+
+.knowledge-column span {
+  display: inline-block;
+  padding: 0.35rem 0.5rem;
+  color: var(--teal-dark);
+  background: #e7f2f2;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.knowledge-bridge {
+  display: grid;
+  place-items: center;
+  min-height: 4.8rem;
+  color: #ffffff;
+  background: var(--gold);
+  border-radius: 8px;
+  font-weight: 900;
+  text-align: center;
+}
+
 .story-board {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -573,6 +722,43 @@ a:focus-visible {
 .story-step p {
   margin: 0;
   color: var(--muted);
+}
+
+.courtly-diagram {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 1rem 0;
+}
+
+.courtly-card {
+  min-height: 7rem;
+  padding: 0.9rem;
+  background: #fff8eb;
+  border: 1px solid #ead4aa;
+  border-radius: 8px;
+}
+
+.courtly-card.main {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--wine), var(--indigo));
+  border-color: transparent;
+}
+
+.courtly-card strong,
+.courtly-card span {
+  display: block;
+}
+
+.courtly-card strong {
+  margin-bottom: 0.45rem;
+  font-size: 1.03rem;
+}
+
+.courtly-card span {
+  color: inherit;
+  opacity: 0.86;
+  font-size: 0.9rem;
 }
 
 .cause-wheel {
@@ -634,6 +820,104 @@ a:focus-visible {
 
 .memory-line strong {
   color: var(--wine);
+}
+
+.crusade-flow,
+.trade-infographic,
+.guild-ladder {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+
+.crusade-flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  counter-reset: flow;
+}
+
+.crusade-flow div {
+  position: relative;
+  min-height: 9.4rem;
+  padding: 1rem 1rem 1rem 3.2rem;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.crusade-flow div::before {
+  counter-increment: flow;
+  content: counter(flow);
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  color: #ffffff;
+  background: var(--wine);
+  border-radius: 50%;
+  font-weight: 900;
+}
+
+.crusade-flow strong,
+.trade-step strong,
+.guild-ladder strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.crusade-flow p,
+.trade-step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.trade-infographic {
+  grid-template-columns: minmax(0, 1fr) 3rem minmax(0, 1fr) 3rem minmax(0, 1fr);
+  align-items: center;
+  padding: 0.8rem;
+  background: #f7faf7;
+  border: 1px solid #d8e8dc;
+  border-radius: 8px;
+}
+
+.trade-step {
+  min-height: 8.5rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.trade-step strong {
+  color: var(--green);
+}
+
+.trade-line {
+  height: 0.22rem;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+  border-radius: 999px;
+}
+
+.guild-ladder {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.guild-ladder div {
+  padding: 0.95rem;
+  background: #ffffff;
+  border-top: 5px solid var(--teal);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.guild-ladder span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .guild-board {
@@ -705,8 +989,33 @@ a:focus-visible {
   .split-list,
   .story-board,
   .definition-row,
-  .guild-board {
+  .guild-board,
+  .deep-grid,
+  .knowledge-map,
+  .courtly-diagram,
+  .crusade-flow,
+  .trade-infographic,
+  .guild-ladder {
     grid-template-columns: 1fr;
+  }
+
+  .path-infographic {
+    grid-template-columns: 1fr;
+  }
+
+  .path-arrow {
+    min-height: 1.5rem;
+    transform: rotate(90deg);
+  }
+
+  .knowledge-bridge {
+    min-height: 3.5rem;
+  }
+
+  .trade-line {
+    width: 0.22rem;
+    height: 2rem;
+    justify-self: center;
   }
 
   .timeline {
