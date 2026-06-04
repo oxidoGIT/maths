@@ -231,7 +231,8 @@ button {
 
 .primary-action,
 .check-action,
-.ghost-action {
+.ghost-action,
+.question-check-action {
   min-height: 2.65rem;
   padding: 0.68rem 0.95rem;
   border: 0;
@@ -257,6 +258,18 @@ button {
 
 .ghost-action:hover {
   background: #d5ebeb;
+}
+
+.question-check-action {
+  justify-self: start;
+  min-height: 2.35rem;
+  margin-top: 0.15rem;
+  color: #ffffff;
+  background: var(--teal);
+}
+
+.question-check-action:hover {
+  background: var(--teal-dark);
 }
 
 .section-head {
@@ -640,6 +653,13 @@ button {
   font-size: 0.92rem;
   font-weight: 700;
   line-height: 1.48;
+}
+
+.card-result {
+  min-height: 1.2rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 textarea {

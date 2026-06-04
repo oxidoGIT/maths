@@ -111,6 +111,92 @@ function setActiveNav() {
   });
 }
 
+function showSourceParagraph(card, sourceText) {
+  if (!sourceText) return;
+
+  const sourceBox = document.createElement("div");
+  const sourceLabel = document.createElement("span");
+  const sourceParagraph = document.createElement("p");
+
+  sourceBox.className = "source-paragraph";
+  sourceLabel.textContent = "Fragment del temari";
+  sourceParagraph.textContent = sourceText;
+  sourceBox.append(sourceLabel, sourceParagraph);
+  card.append(sourceBox);
+}
+
+function clearCardFeedback(card) {
+  card.querySelector(".source-paragraph")?.remove();
+  card.classList.remove("correct", "wrong");
+}
+
+function checkQuizCard(card, { requireSelection = false } = {}) {
+  const selected = card.querySelector("input:checked");
+  const questionName = card.querySelector("input[type='radio']")?.name;
+  const sourceText = questionName ? sourceParagraphs[questionName] : "";
+
+  clearCardFeedback(card);
+
+  if (!selected && requireSelection) {
+    card.querySelector(".card-result").textContent = "Tria una resposta abans de corregir.";
+    card.querySelector(".card-result").style.color = "var(--red)";
+    return false;
+  }
+
+  const isCorrect = selected?.value === card.dataset.answer;
+  card.classList.add(isCorrect ? "correct" : "wrong");
+
+  if (isCorrect) {
+    showSourceParagraph(card, sourceText);
+  }
+
+  return isCorrect;
+}
+
+function updateFinalTestProgress(exerciseSet) {
+  const cards = [...exerciseSet.querySelectorAll(".quiz-card")];
+  const correct = cards.filter((card) => card.classList.contains("correct")).length;
+  const result = exerciseSet.querySelector(".quiz-result");
+
+  result.textContent = `Has corregit ${correct} de ${cards.length} preguntes correctament.`;
+  result.style.color = correct === cards.length ? "var(--green)" : "var(--muted)";
+
+  if (correct === cards.length) {
+    completed.add(exerciseSet.dataset.quiz);
+    saveProgress();
+  }
+}
+
+document.querySelectorAll('[data-quiz="test-final"]').forEach((exerciseSet) => {
+  exerciseSet.querySelector(".check-action")?.remove();
+
+  exerciseSet.querySelectorAll(".quiz-card").forEach((card) => {
+    const action = document.createElement("button");
+    const result = document.createElement("p");
+
+    action.className = "question-check-action";
+    action.type = "button";
+    action.textContent = "Corregir pregunta";
+    result.className = "card-result";
+
+    action.addEventListener("click", () => {
+      const isCorrect = checkQuizCard(card, { requireSelection: true });
+
+      if (isCorrect) {
+        result.textContent = "Correcte.";
+        result.style.color = "var(--green)";
+      } else if (card.querySelector("input:checked")) {
+        result.textContent = "No és correcte. Torna-ho a provar.";
+        result.style.color = "var(--red)";
+      }
+
+      updateFinalTestProgress(exerciseSet);
+    });
+
+    card.append(action, result);
+  });
+});
+
 document.querySelectorAll("[data-scroll]").forEach((button) => {
   button.addEventListener("click", () => {
     document.querySelector(button.dataset.scroll)?.scrollIntoView({ behavior: "smooth" });
@@ -149,31 +235,7 @@ document.querySelectorAll(".check-action").forEach((button) => {
     let correct = 0;
 
     questions.forEach((card) => {
-      const selected = card.querySelector("input:checked");
-      const isCorrect = selected?.value === card.dataset.answer;
-      const questionName = card.querySelector("input[type='radio']")?.name;
-      const sourceText = questionName ? sourceParagraphs[questionName] : "";
-      const previousSource = card.querySelector(".source-paragraph");
-
-      previousSource?.remove();
-      card.classList.remove("correct", "wrong");
-      card.classList.add(isCorrect ? "correct" : "wrong");
-
-      if (isCorrect) {
-        correct += 1;
-
-        if (sourceText) {
-          const sourceBox = document.createElement("div");
-          const sourceLabel = document.createElement("span");
-          const sourceParagraph = document.createElement("p");
-
-          sourceBox.className = "source-paragraph";
-          sourceLabel.textContent = "Fragment del temari";
-          sourceParagraph.textContent = sourceText;
-          sourceBox.append(sourceLabel, sourceParagraph);
-          card.append(sourceBox);
-        }
-      }
+      if (checkQuizCard(card)) correct += 1;
     });
 
     const result = exerciseSet.querySelector(".quiz-result");
@@ -202,6 +264,10 @@ document.getElementById("resetProgress").addEventListener("click", () => {
   localStorage.removeItem("temariCompleted");
   document.querySelectorAll(".quiz-card").forEach((card) => card.classList.remove("correct", "wrong"));
   document.querySelectorAll(".source-paragraph").forEach((source) => source.remove());
+  document.querySelectorAll(".card-result").forEach((result) => {
+    result.textContent = "";
+    result.removeAttribute("style");
+  });
   document.querySelectorAll(".quiz-result").forEach((result) => {
     result.textContent = "";
     result.removeAttribute("style");
