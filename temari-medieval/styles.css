@@ -615,6 +615,33 @@ button {
   accent-color: var(--teal);
 }
 
+.source-paragraph {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+  padding: 0.78rem 0.85rem;
+  color: var(--ink);
+  background: #eef8f1;
+  border-left: 5px solid var(--green);
+  border-radius: 6px;
+}
+
+.source-paragraph span {
+  color: var(--green);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.source-paragraph p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.48;
+}
+
 textarea {
   width: 100%;
   min-height: 7rem;
