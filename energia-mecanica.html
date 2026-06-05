@@ -208,7 +208,18 @@
           <figure class="state-triangle">
             <svg viewBox="0 0 420 310" role="img" aria-labelledby="state-title">
               <title id="state-title">Triángulo de cambios de estado</title>
+              <defs>
+                <marker id="state-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" class="state-arrowhead" />
+                </marker>
+              </defs>
               <polygon points="210,40 70,248 350,248" class="triangle-line" />
+              <path d="M 190 64 L 86 218" class="state-arrow" marker-end="url(#state-arrowhead)" />
+              <path d="M 96 230 L 200 76" class="state-arrow" marker-end="url(#state-arrowhead)" />
+              <path d="M 226 64 L 332 222" class="state-arrow" marker-end="url(#state-arrowhead)" />
+              <path d="M 342 230 L 236 72" class="state-arrow" marker-end="url(#state-arrowhead)" />
+              <path d="M 108 234 L 316 234" class="state-arrow" marker-end="url(#state-arrowhead)" />
+              <path d="M 312 263 L 104 263" class="state-arrow" marker-end="url(#state-arrowhead)" />
               <text x="188" y="34" class="svg-label">sólido</text>
               <text x="42" y="278" class="svg-label">líquido</text>
               <text x="318" y="278" class="svg-label">gas</text>

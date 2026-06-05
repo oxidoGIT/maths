@@ -265,6 +265,18 @@ h3 {
   stroke-width: 5;
 }
 
+.state-arrow {
+  fill: none;
+  stroke: #286384;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.state-arrowhead {
+  fill: #286384;
+}
+
 .svg-green {
   fill: #5fa37d;
 }
