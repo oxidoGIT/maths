@@ -129,6 +129,64 @@ button {
   transition: width 250ms ease;
 }
 
+.tree-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0.75rem auto 0;
+  padding: 0.55rem 0.65rem;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.tree-path,
+.tree-links {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.tree-path span {
+  color: var(--teal-dark);
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.tree-path a,
+.tree-links a {
+  color: var(--teal-dark);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.tree-path a::after {
+  content: "/";
+  margin-left: 0.45rem;
+  color: var(--muted);
+}
+
+.tree-path strong {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+.tree-links a {
+  padding: 0.28rem 0.45rem;
+  border-radius: 6px;
+}
+
+.tree-links a:hover {
+  color: #ffffff;
+  background: var(--teal-dark);
+}
+
 .layout {
   display: grid;
   grid-template-columns: 15.5rem minmax(0, 1fr);
@@ -1069,6 +1127,17 @@ a:focus-visible {
     flex-direction: column;
   }
 
+  .tree-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tree-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.1rem;
+  }
+
   .topbar-actions {
     align-items: stretch;
     width: 100%;
@@ -1151,6 +1220,16 @@ a:focus-visible {
 }
 
 @media (max-width: 560px) {
+  .tree-nav {
+    width: min(100% - 1rem, 1240px);
+  }
+
+  .tree-path,
+  .tree-links {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
   .topbar-actions {
     flex-direction: column;
     gap: 0.55rem;
