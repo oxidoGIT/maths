@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Energía mecánica · Science 2º ESO</title>
+    <link rel="stylesheet" href="energia-mecanica.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="index.html">Asignaturas 2º ESO</a>
+        <a class="back" href="science.html">Volver a Science</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Science · Examen Junio 2026</p>
+        <h1 id="page-title">Energía mecánica, calor y temperatura</h1>
+        <p class="intro__text">
+          Repaso completo del temario: fórmulas, cambios de estado, transmisión
+          del calor y ejercicios autocorregibles de nivel examen.
+        </p>
+        <nav class="quick-nav" aria-label="Secciones">
+          <a href="#teoria">Teoría</a>
+          <a href="#formulas">Fórmulas</a>
+          <a href="#errores">Errores típicos</a>
+          <a href="#ejercicios">Ejercicios</a>
+        </nav>
+      </section>
+
+      <section class="section" id="teoria" aria-labelledby="teoria-title">
+        <p class="eyebrow">Teoría resumida</p>
+        <h2 id="teoria-title">Lo que hay que dominar</h2>
+
+        <div class="theory-grid">
+          <article class="theory-card">
+            <span class="theory-card__number">01</span>
+            <h3>Energía y unidad</h3>
+            <p>
+              La energía es la capacidad de producir cambios: mover un cuerpo,
+              calentarlo, deformarlo, iluminarlo o cambiar su estado.
+            </p>
+            <p>
+              En el Sistema Internacional se mide en <strong>julios</strong>
+              (<strong>J</strong>). Para los cálculos usa masa en kg, altura en
+              m, velocidad en m/s y gravedad en m/s².
+            </p>
+          </article>
+
+          <article class="theory-card">
+            <span class="theory-card__number">02</span>
+            <h3>Energía potencial gravitatoria</h3>
+            <p>
+              Es la energía que tiene un cuerpo por estar a cierta altura. Cuanta
+              más masa, más altura o más gravedad, mayor energía potencial.
+            </p>
+            <p class="formula">Ep = m · g · h</p>
+            <p>
+              La altura se mide desde un nivel de referencia. Si tomamos el suelo
+              como referencia, en el suelo h = 0 y Ep = 0.
+            </p>
+          </article>
+
+          <article class="theory-card">
+            <span class="theory-card__number">03</span>
+            <h3>Energía cinética</h3>
+            <p>
+              Es la energía que tiene un cuerpo por estar en movimiento. Depende
+              de la masa y, sobre todo, de la velocidad al cuadrado.
+            </p>
+            <p class="formula">Ec = 1/2 · m · v²</p>
+            <p>
+              Si duplicas la velocidad, la energía cinética se multiplica por
+              cuatro. Esta es una de las trampas más habituales.
+            </p>
+          </article>
+
+          <article class="theory-card">
+            <span class="theory-card__number">04</span>
+            <h3>Energía mecánica</h3>
+            <p>
+              Es la suma de la energía potencial y la energía cinética de un
+              cuerpo.
+            </p>
+            <p class="formula">Em = Ep + Ec</p>
+            <p>
+              Si no hay rozamiento, la energía mecánica se conserva: al bajar,
+              disminuye Ep y aumenta Ec. Con rozamiento, parte se transforma en
+              energía térmica.
+            </p>
+          </article>
+
+          <article class="theory-card">
+            <span class="theory-card__number">05</span>
+            <h3>Temperatura, calor y energía térmica</h3>
+            <p>
+              La temperatura mide el nivel térmico de un cuerpo, relacionado con
+              la agitación media de sus partículas. A mayor temperatura, más se
+              mueven sus partículas.
+            </p>
+            <p>
+              El calor no es algo que un cuerpo tenga guardado: es energía
+              térmica que se transfiere de un cuerpo a mayor temperatura a otro a
+              menor temperatura.
+            </p>
+          </article>
+
+          <article class="theory-card">
+            <span class="theory-card__number">06</span>
+            <h3>Sensación térmica y equilibrio</h3>
+            <p>
+              La piel percibe la sensación de frío o caliente, pero esa sensación
+              puede depender del material, del viento, de la humedad o del tiempo
+              de contacto.
+            </p>
+            <p>
+              Dos cuerpos en contacto intercambian calor hasta alcanzar el
+              equilibrio térmico, es decir, hasta tener la misma temperatura.
+            </p>
+          </article>
+        </div>
+
+        <div class="visual-row" aria-label="Diagramas de energía y calor">
+          <figure class="diagram">
+            <svg viewBox="0 0 420 240" role="img" aria-labelledby="energy-diagram-title">
+              <title id="energy-diagram-title">Transformación entre energía potencial y cinética</title>
+              <rect x="18" y="24" width="384" height="192" rx="8" class="svg-bg" />
+              <line x1="70" y1="176" x2="340" y2="76" class="svg-line" />
+              <circle cx="112" cy="160" r="22" class="svg-green" />
+              <circle cx="214" cy="122" r="22" class="svg-yellow" />
+              <circle cx="320" cy="84" r="22" class="svg-red" />
+              <text x="72" y="208" class="svg-label">baja altura</text>
+              <text x="260" y="48" class="svg-label">alta altura</text>
+              <text x="64" y="64" class="svg-small">Ep menor</text>
+              <text x="64" y="86" class="svg-small">Ec mayor</text>
+              <text x="270" y="150" class="svg-small">Ep mayor</text>
+              <text x="270" y="172" class="svg-small">Ec menor</text>
+            </svg>
+            <figcaption>Al bajar, la energía potencial se transforma en cinética.</figcaption>
+          </figure>
+
+          <figure class="diagram">
+            <svg viewBox="0 0 420 240" role="img" aria-labelledby="heat-diagram-title">
+              <title id="heat-diagram-title">Tres formas de transferencia del calor</title>
+              <rect x="18" y="24" width="384" height="192" rx="8" class="svg-bg" />
+              <rect x="56" y="82" width="112" height="28" rx="8" class="svg-metal" />
+              <circle cx="54" cy="96" r="16" class="svg-red" />
+              <path d="M178 98 C210 58, 250 58, 282 98 C250 140, 210 140, 178 98" class="svg-arrow-fill" />
+              <path d="M300 72 C330 82, 352 104, 364 134" class="svg-ray" />
+              <path d="M300 100 C330 110, 344 124, 354 150" class="svg-ray" />
+              <text x="54" y="150" class="svg-label">conducción</text>
+              <text x="184" y="150" class="svg-label">convección</text>
+              <text x="300" y="174" class="svg-label">radiación</text>
+            </svg>
+            <figcaption>Conducción, convección y radiación transfieren calor de formas distintas.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section section--split" id="formulas" aria-labelledby="formulas-title">
+        <div>
+          <p class="eyebrow">Fórmulas y escalas</p>
+          <h2 id="formulas-title">Chuleta de cálculo</h2>
+          <p>
+            En los ejercicios de 2º ESO suele aceptarse g = 9,8 m/s². Si el
+            profesor redondea, también verás g = 10 N/kg. Esta web corrige con
+            un pequeño margen.
+          </p>
+        </div>
+        <div class="formula-list">
+          <div><strong>Ep = m · g · h</strong><span>energía potencial gravitatoria</span></div>
+          <div><strong>Ec = 1/2 · m · v²</strong><span>energía cinética</span></div>
+          <div><strong>Em = Ep + Ec</strong><span>energía mecánica</span></div>
+          <div><strong>v = √(2 · Ec / m)</strong><span>despeje de la velocidad</span></div>
+          <div><strong>h = Ep / (m · g)</strong><span>despeje de la altura</span></div>
+          <div><strong>K = ºC + 273,15</strong><span>Celsius a Kelvin</span></div>
+          <div><strong>ºC = K - 273,15</strong><span>Kelvin a Celsius</span></div>
+          <div><strong>ºF = ºC · 9/5 + 32</strong><span>Celsius a Fahrenheit</span></div>
+          <div><strong>ºC = (ºF - 32) · 5/9</strong><span>Fahrenheit a Celsius</span></div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="calor-title">
+        <p class="eyebrow">Calor y materia</p>
+        <h2 id="calor-title">Cambios de estado, expansión y materiales</h2>
+        <div class="state-layout">
+          <figure class="state-triangle">
+            <svg viewBox="0 0 420 310" role="img" aria-labelledby="state-title">
+              <title id="state-title">Triángulo de cambios de estado</title>
+              <polygon points="210,40 70,248 350,248" class="triangle-line" />
+              <text x="188" y="34" class="svg-label">sólido</text>
+              <text x="42" y="278" class="svg-label">líquido</text>
+              <text x="318" y="278" class="svg-label">gas</text>
+              <text x="82" y="144" class="svg-small rotate-left">fusión</text>
+              <text x="102" y="170" class="svg-small rotate-left">solidificación</text>
+              <text x="260" y="142" class="svg-small rotate-right">sublimación</text>
+              <text x="228" y="168" class="svg-small rotate-right">sublimación inversa</text>
+              <text x="158" y="238" class="svg-small">evaporación</text>
+              <text x="152" y="264" class="svg-small">condensación</text>
+            </svg>
+          </figure>
+          <div class="notes">
+            <article>
+              <h3>Cambios progresivos</h3>
+              <p>
+                Fusión, vaporización y sublimación necesitan absorber energía.
+                Durante el cambio de estado la energía se usa para cambiar la
+                estructura de la materia.
+              </p>
+            </article>
+            <article>
+              <h3>Cambios regresivos</h3>
+              <p>
+                Solidificación, condensación y sublimación inversa liberan
+                energía. Un gas que se enfría puede condensarse y pasar a líquido.
+              </p>
+            </article>
+            <article>
+              <h3>Dilatación y contracción</h3>
+              <p>
+                Al calentar, normalmente aumenta el volumen porque las partículas
+                se agitan más y se separan. Al enfriar, el volumen disminuye.
+              </p>
+            </article>
+            <article>
+              <h3>Conductores y aislantes</h3>
+              <p>
+                Los metales conducen bien el calor. Corcho, madera, plástico,
+                lana, papel y aire conducen mal y se usan como aislantes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="transmision-title">
+        <p class="eyebrow">Transferencia del calor</p>
+        <h2 id="transmision-title">Tres mecanismos que hay que distinguir</h2>
+        <div class="theory-grid theory-grid--three">
+          <article class="theory-card">
+            <span class="theory-card__number">A</span>
+            <h3>Conducción</h3>
+            <p>
+              El calor se transmite por contacto, sobre todo en sólidos. Las
+              partículas vibran y transmiten energía a las partículas vecinas.
+            </p>
+            <p><strong>Ejemplos:</strong> una cuchara metálica caliente, una barra de metal, una pared.</p>
+          </article>
+          <article class="theory-card">
+            <span class="theory-card__number">B</span>
+            <h3>Convección</h3>
+            <p>
+              Ocurre en fluidos, es decir, líquidos y gases. Se mueve materia:
+              el fluido caliente asciende y el frío desciende.
+            </p>
+            <p><strong>Ejemplos:</strong> radiadores, aire sobre una vela, agua de una olla, brisas marinas.</p>
+          </article>
+          <article class="theory-card">
+            <span class="theory-card__number">C</span>
+            <h3>Radiación</h3>
+            <p>
+              No necesita medio material. Viaja mediante ondas electromagnéticas.
+              Por eso el calor del Sol llega a la Tierra a través del espacio.
+            </p>
+            <p><strong>Ejemplos:</strong> Sol, fuego a distancia, imágenes termográficas.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="errores" aria-labelledby="errores-title">
+        <p class="eyebrow">Antes del examen</p>
+        <h2 id="errores-title">Errores típicos</h2>
+        <div class="mistakes">
+          <p><strong>1.</strong> No se transfiere el frío: se transfiere calor desde el cuerpo más caliente al más frío.</p>
+          <p><strong>2.</strong> En energía cinética la velocidad va al cuadrado: v² no es lo mismo que 2v.</p>
+          <p><strong>3.</strong> Kelvin no usa el símbolo º. Se escribe 298 K, no 298 ºK.</p>
+          <p><strong>4.</strong> Una temperatura menor que 0 K no es posible.</p>
+          <p><strong>5.</strong> En convección se mueve materia; en conducción y radiación no.</p>
+          <p><strong>6.</strong> Durante un cambio de estado, aportar energía no siempre aumenta la temperatura.</p>
+        </div>
+      </section>
+
+      <section class="section exercises-section" id="ejercicios" aria-labelledby="ejercicios-title">
+        <div class="exercise-header">
+          <div>
+            <p class="eyebrow">Práctica autocorregible</p>
+            <h2 id="ejercicios-title">Ejercicios para cubrir todo el temario</h2>
+          </div>
+          <div class="score-box" aria-live="polite">
+            <span id="score">0 / 0</span>
+            <small>correctos</small>
+          </div>
+        </div>
+
+        <div class="exercise-actions">
+          <button class="button" id="check-all" type="button">Corregir todo</button>
+          <button class="button button--soft" id="show-all" type="button">Mostrar soluciones</button>
+          <button class="button button--ghost" id="reset-all" type="button">Reiniciar</button>
+        </div>
+
+        <div id="exercise-root"></div>
+      </section>
+    </main>
+
+    <template id="exercise-template">
+      <article class="exercise">
+        <div class="exercise__meta">
+          <span class="exercise__number"></span>
+          <span class="exercise__tag"></span>
+        </div>
+        <h3 class="exercise__title"></h3>
+        <p class="exercise__statement"></p>
+        <div class="exercise__answer"></div>
+        <div class="exercise__buttons">
+          <button class="button check" type="button">Comprobar</button>
+          <button class="button button--soft hint" type="button">Pista</button>
+          <button class="button button--ghost solution" type="button">Solución</button>
+        </div>
+        <p class="feedback" role="status"></p>
+        <div class="explanation"></div>
+      </article>
+    </template>
+
+    <script src="energia-mecanica.js"></script>
+  </body>
+</html>
