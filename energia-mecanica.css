@@ -267,14 +267,63 @@ h3 {
 
 .state-arrow {
   fill: none;
-  stroke: #286384;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 4;
 }
 
-.state-arrowhead {
+.state-arrow--warm {
+  stroke: #9f3f36;
+}
+
+.state-arrow--cool {
+  stroke: #286384;
+}
+
+.state-arrowhead--warm {
+  fill: #9f3f36;
+}
+
+.state-arrowhead--cool {
   fill: #286384;
+}
+
+.state-node {
+  fill: #fffdfa;
+  stroke: #2f604e;
+  stroke-width: 3;
+}
+
+.state-node-label {
+  fill: #2f604e;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.state-legend {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding: 14px;
+  list-style: none;
+}
+
+.state-legend li {
+  display: grid;
+  grid-template-columns: minmax(125px, auto) 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.state-legend span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.state-legend strong {
+  color: var(--accent);
 }
 
 .svg-green {
@@ -666,5 +715,10 @@ h3 {
     flex-direction: column;
     justify-content: center;
     padding: 10px 0;
+  }
+
+  .state-legend li {
+    grid-template-columns: 1fr;
+    gap: 1px;
   }
 }
