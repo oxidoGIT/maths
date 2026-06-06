@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repaso del examen · Sistemas y geometría plana</title>
+    <link rel="stylesheet" href="repaso-examen-sistemas-geometria.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="../matematicas.html">← Volver a Matemáticas</a>
+        <p class="eyebrow">Matemáticas · 2º ESO · Preparación del examen</p>
+        <h1>Sistemas y geometría plana</h1>
+        <p class="hero__intro">
+          63 ejercicios autocorregibles organizados según los puntos evaluables
+          de la rúbrica. La representación gráfica de sistemas no se incluye.
+        </p>
+        <div class="progress">
+          <div>
+            <span id="progress-label">0 de 63 ejercicios completados</span>
+            <strong id="score-label">0 puntos</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+          <button class="reset-progress" id="reset-progress" type="button">Resetear progreso</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="exam-map">
+        <div>
+          <p class="eyebrow">Tu hoja de ruta</p>
+          <h2>Los 9 apartados del examen</h2>
+          <p>
+            Haz primero una vuelta completa sin mirar soluciones. Después repite
+            solo los apartados en los que hayas fallado.
+          </p>
+        </div>
+        <nav class="topic-links" id="topic-links" aria-label="Apartados del examen"></nav>
+      </section>
+
+      <section class="method-guide">
+        <p class="eyebrow">Recordatorio exprés</p>
+        <h2>Cuatro ideas que desbloquean muchos ejercicios</h2>
+        <div class="method-grid">
+          <article><strong>Sistemas</strong><span>Una solución: SCD. Infinitas: SCI. Ninguna: SI.</span></article>
+          <article><strong>Polígonos</strong><span>Suma interior = 180° · (n − 2).</span></article>
+          <article><strong>Pitágoras</strong><span>cateto² + cateto² = hipotenusa².</span></article>
+          <article><strong>Áreas</strong><span>Descompón las figuras difíciles en figuras conocidas.</span></article>
+        </div>
+      </section>
+
+      <section class="levels" id="levels"></section>
+    </main>
+
+    <template id="exercise-template">
+      <article class="exercise">
+        <div class="exercise__top">
+          <span class="exercise__number"></span>
+          <span class="exercise__tag"></span>
+        </div>
+        <h3 class="exercise__title"></h3>
+        <p class="exercise__prompt"></p>
+        <div class="exercise__visual"></div>
+        <pre class="equations"></pre>
+        <div class="answer"></div>
+        <div class="exercise__actions">
+          <button class="button check" type="button">Comprobar</button>
+          <button class="button button--soft hint" type="button">Pista</button>
+          <button class="button button--ghost solution" type="button">Ver solución</button>
+        </div>
+        <p class="feedback" role="status"></p>
+        <div class="explanation"></div>
+      </article>
+    </template>
+
+    <script src="repaso-examen-sistemas-geometria.js"></script>
+  </body>
+</html>
