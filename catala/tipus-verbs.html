@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipus de verbs i sintagma verbal · Examen de juny 2026</title>
+    <link rel="stylesheet" href="estudi.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="../catala.html">← Torna a Català</a>
+        <p class="eyebrow">Català · 2n d'ESO · Examen de juny 2026</p>
+        <h1>Tipus de verbs i sintagma verbal</h1>
+        <p class="hero__intro">
+          Com reconèixer el nucli del predicat i distingir verbs copulatius,
+          predicatius, transitius, intransitius i pronominals.
+        </p>
+        <div class="progress">
+          <div class="progress__labels">
+            <span id="progress-label">0 exercicis completats</span>
+            <strong id="score-label">0%</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+          <button class="reset-progress" id="reset-progress" type="button">Esborra el progrés</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav class="contents" aria-label="Continguts">
+        <strong>En aquesta pàgina</strong>
+        <a href="#sv">Sintagma verbal</a>
+        <a href="#copulatius">Copulatius i predicatius</a>
+        <a href="#transitius">Transitius i intransitius</a>
+        <a href="#pronominals">Pronominals</a>
+        <a href="#practica">Exercicis</a>
+      </nav>
+
+      <section class="theory-section" id="sv">
+        <p class="eyebrow">Teoria 1</p>
+        <h2>El sintagma verbal</h2>
+        <p class="theory-lead">
+          El sintagma verbal està format pel <strong>nucli</strong>, que és el
+          verb, i pels complements verbals: CD, CI, CC, CRV o atribut. La funció
+          del sintagma verbal sempre és la de <strong>predicat</strong>.
+        </p>
+        <div class="callout">
+          <strong>Exemple</strong>
+          El germà de l'Anna visita Mallorca la setmana vinent. El verb
+          «visita» és el nucli del sintagma verbal i tota la resta del predicat
+          depèn d'aquest nucli.
+        </div>
+      </section>
+
+      <section class="theory-section" id="copulatius">
+        <p class="eyebrow">Teoria 2</p>
+        <h2>Copulatius i predicatius</h2>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Verbs copulatius</h3>
+            <p><strong>ser, estar i semblar</strong> no aporten un significat complet i necessiten un atribut.</p>
+            <p class="example">La noia és una atleta.<br />Predicat nominal: és una atleta.</p>
+          </article>
+          <article class="theory-card">
+            <h3>Verbs predicatius</h3>
+            <p>La resta de verbs tenen significat ple i formen un predicat verbal.</p>
+            <p class="example">La noia corre cada matí.<br />Predicat verbal: corre cada matí.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="theory-section" id="transitius">
+        <p class="eyebrow">Teoria 3</p>
+        <h2>Transitius i intransitius</h2>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Verb transitiu</h3>
+            <p>Admet o necessita un <strong>complement directe</strong> per completar el significat.</p>
+            <p class="example">La Maria menja una poma. → Què menja? Una poma.</p>
+          </article>
+          <article class="theory-card">
+            <h3>Verb intransitiu</h3>
+            <p>No admet complement directe. Pot portar altres complements, però no un CD.</p>
+            <p class="example">El nen dorm al sofà. → «al sofà» és un complement circumstancial, no un CD.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="theory-section" id="pronominals">
+        <p class="eyebrow">Teoria 4</p>
+        <h2>Verbs pronominals</h2>
+        <p class="theory-lead">
+          Es conjuguen sempre amb un o més pronoms febles. El pronom forma part
+          del verb i sovint canvia el significat.
+        </p>
+        <div class="memory-grid">
+          <article class="memory-card"><strong>acostumar-se</strong><span>Em costa acostumar-me al fred.</span></article>
+          <article class="memory-card"><strong>adonar-se</strong><span>Ens hem adonat de l'error.</span></article>
+          <article class="memory-card"><strong>veure-hi</strong><span>Amb poca llum no hi veig.</span></article>
+          <article class="memory-card"><strong>sortir-se'n</strong><span>Segur que te'n sortiràs.</span></article>
+        </div>
+      </section>
+
+      <section class="practice" id="practica">
+        <p class="eyebrow">Pràctica autocorrectiva</p>
+        <h2>Classifica els verbs</h2>
+        <p class="practice-lead">Decideix quin tipus de verb hi ha a cada oració.</p>
+        <div id="practice-root"></div>
+      </section>
+    </main>
+
+    <script>
+      window.practiceData = {
+        id: "tipus-verbs",
+        sections: [
+          {
+            label: "Predicat",
+            title: "Copulatius i predicatius",
+            intro: "Busca el verb i comprova si necessita un atribut.",
+            exercises: [
+              { title: "La porta", tag: "Copulatiu", prompt: "A «La porta sembla oberta», quin tipus de verb és «sembla»?", type: "choice", options: ["Copulatiu", "Predicatiu"], accepted: ["Copulatiu"], hint: "Semblar uneix el subjecte amb un atribut.", explanation: "«Semblar» és copulatiu i «oberta» és l'atribut." },
+              { title: "La Maria corre", tag: "Predicatiu", prompt: "A «La Maria corre cada matí», quin tipus de verb és «corre»?", type: "choice", options: ["Copulatiu", "Predicatiu"], accepted: ["Predicatiu"], hint: "El verb té significat ple.", explanation: "«Córrer» és un verb predicatiu." },
+              { title: "Funció del SV", tag: "Sintaxi", prompt: "Quina funció fa sempre el sintagma verbal?", type: "choice", options: ["Subjecte", "Predicat", "Complement directe"], accepted: ["Predicat"], hint: "El SV diu alguna cosa del subjecte.", explanation: "La funció del sintagma verbal sempre és la de predicat." },
+              { title: "Nucli del SV", tag: "Sintaxi", prompt: "Quina classe de paraula és el nucli del sintagma verbal?", type: "choice", options: ["Nom", "Verb", "Adjectiu"], accepted: ["Verb"], hint: "El mateix nom del sintagma ho indica.", explanation: "El nucli del sintagma verbal és un verb." }
+            ]
+          },
+          {
+            label: "Complements i pronoms",
+            title: "Transitius, intransitius i pronominals",
+            intro: "Comprova si hi ha complement directe i si el pronom forma part del verb.",
+            exercises: [
+              { title: "Una moneda", tag: "Transitiu", prompt: "A «Tens una moneda de dos euros?», el verb és...", type: "choice", options: ["Transitiu", "Intransitiu"], accepted: ["Transitiu"], hint: "Pregunta: què tens?", explanation: "«Una moneda de dos euros» és complement directe; per tant, «tenir» és transitiu." },
+              { title: "Dormir", tag: "Intransitiu", prompt: "A «El nen dorm al sofà», el verb és...", type: "choice", options: ["Transitiu", "Intransitiu"], accepted: ["Intransitiu"], hint: "«Al sofà» indica lloc, no és un CD.", explanation: "«Dormir» és intransitiu en aquesta oració." },
+              { title: "Adonar-se", tag: "Pronominal", prompt: "Quina és la forma pronominal correcta?", type: "choice", options: ["adonar", "adonar-se", "se adonar"], accepted: ["adonar-se"], hint: "El pronom feble va unit a l'infinitiu.", explanation: "El verb pronominal és «adonar-se»." },
+              { title: "Sortir-se'n", tag: "Pronominal", prompt: "Quants pronoms febles conté l'infinitiu «sortir-se'n»?", type: "choice", options: ["Cap", "Un", "Dos"], accepted: ["Dos"], hint: "Localitza «se» i «en».", explanation: "«Sortir-se'n» conté dos pronoms febles: se i en." },
+              { title: "Classificació completa", tag: "Repte", prompt: "A «La Júlia llegeix una novel·la», «llegeix» és...", type: "choice", options: ["Copulatiu i transitiu", "Predicatiu i transitiu", "Predicatiu i intransitiu"], accepted: ["Predicatiu i transitiu"], hint: "Té significat ple i porta un CD.", explanation: "«Llegir» és predicatiu i «una novel·la» és el seu complement directe." },
+              { title: "Verb pronominal", tag: "Ús", prompt: "Completa correctament: «Jo no ____ de l'error.»", type: "choice", options: ["m'adono", "adono", "me adono"], accepted: ["m'adono"], hint: "El verb és adonar-se i el pronom s'apostrofa.", explanation: "La forma correcta és «Jo no m'adono de l'error»." }
+            ]
+          }
+        ]
+      };
+    </script>
+    <script src="practica.js"></script>
+  </body>
+</html>

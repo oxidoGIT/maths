@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poesia: mètrica i rima · Examen de juny 2026</title>
+    <link rel="stylesheet" href="estudi.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="../catala.html">← Torna a Català</a>
+        <p class="eyebrow">Català · 2n d'ESO · Examen de juny 2026</p>
+        <h1>Poesia: mètrica i rima</h1>
+        <p class="hero__intro">
+          Les característiques de la lírica, el recompte de síl·labes, l'art
+          major i menor i la rima dels versos.
+        </p>
+        <div class="progress">
+          <div class="progress__labels">
+            <span id="progress-label">0 exercicis completats</span>
+            <strong id="score-label">0%</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+          <button class="reset-progress" id="reset-progress" type="button">Esborra el progrés</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav class="contents" aria-label="Continguts">
+        <strong>En aquesta pàgina</strong>
+        <a href="#lirica">Lírica</a>
+        <a href="#metrica">Mètrica</a>
+        <a href="#rima">Rima</a>
+        <a href="#practica">Exercicis</a>
+      </nav>
+
+      <section class="theory-section" id="lirica">
+        <p class="eyebrow">Teoria 1</p>
+        <h2>Què és la poesia lírica?</h2>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Característiques</h3>
+            <ul>
+              <li>És un gènere literari en què l'autor expressa sentiments i emocions.</li>
+              <li>Sovint està escrit en vers.</li>
+              <li>Presenta una visió subjectiva: hi apareix l'opinió o la mirada personal de l'autor.</li>
+            </ul>
+          </article>
+          <article class="theory-card">
+            <h3>El poema</h3>
+            <p>
+              Un poema està format per versos. Els dos elements que estudiem
+              per descriure'n la forma són la <strong>mètrica</strong> i la
+              <strong>rima</strong>.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="theory-section" id="metrica">
+        <p class="eyebrow">Teoria 2</p>
+        <h2>La mètrica</h2>
+        <p class="theory-lead">
+          La mètrica és el nombre de síl·labes de cada vers. En català comptem
+          només fins a l'última síl·laba tònica del vers.
+        </p>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Versos d'art menor</h3>
+            <p>Tenen <strong>vuit síl·labes o menys</strong>.</p>
+            <p class="example">El recompte s'indica amb una lletra minúscula quan fem l'esquema de rima.</p>
+          </article>
+          <article class="theory-card">
+            <h3>Versos d'art major</h3>
+            <p>Tenen <strong>nou síl·labes o més</strong>.</p>
+            <p class="example">El recompte s'indica amb una lletra majúscula quan fem l'esquema de rima.</p>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Procediment</strong>
+          Separa les síl·labes, localitza l'última síl·laba tònica i deixa de comptar-hi.
+        </div>
+      </section>
+
+      <section class="theory-section" id="rima">
+        <p class="eyebrow">Teoria 3</p>
+        <h2>La rima</h2>
+        <p class="theory-lead">
+          La rima és la coincidència de sons al final de dos o més versos, a
+          partir de l'última vocal tònica.
+        </p>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Rima consonant</h3>
+            <p>Coincideixen vocals i consonants des de l'última vocal tònica.</p>
+            <p class="example">cant / encant</p>
+          </article>
+          <article class="theory-card">
+            <h3>Rima assonant</h3>
+            <p>Coincideixen només les vocals des de l'última vocal tònica.</p>
+            <p class="example">casa / blanca</p>
+          </article>
+          <article class="theory-card">
+            <h3>Vers lliure</h3>
+            <p>No segueix un esquema regular de rima o mètrica.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="practice" id="practica">
+        <p class="eyebrow">Pràctica autocorrectiva</p>
+        <h2>Analitza els versos</h2>
+        <p class="practice-lead">Recorda comptar fins a l'última síl·laba tònica.</p>
+        <div id="practice-root"></div>
+      </section>
+    </main>
+
+    <script>
+      window.practiceData = {
+        id: "poesia",
+        sections: [
+          {
+            label: "Conceptes",
+            title: "Lírica, mètrica i rima",
+            intro: "Comprova que saps definir els elements essencials.",
+            exercises: [
+              { title: "Gènere líric", tag: "Concepte", prompt: "Què expressa principalment la poesia lírica?", type: "choice", options: ["Sentiments i emocions", "Instruccions tècniques", "Fets científics"], accepted: ["Sentiments i emocions"], hint: "La mirada de l'autor és subjectiva.", explanation: "La lírica expressa sentiments, emocions i una visió subjectiva." },
+              { title: "Mètrica", tag: "Concepte", prompt: "Què indica la mètrica d'un vers?", type: "choice", options: ["El nombre de síl·labes", "El tema del poema", "El nombre d'estrofes"], accepted: ["El nombre de síl·labes"], hint: "Cal fer un recompte.", explanation: "La mètrica indica el nombre de síl·labes dels versos." },
+              { title: "Art menor", tag: "Mètrica", prompt: "Un vers de 8 síl·labes és d'art...", type: "choice", options: ["menor", "major"], accepted: ["menor"], hint: "Vuit és el límit.", explanation: "Els versos de vuit síl·labes o menys són d'art menor." },
+              { title: "Art major", tag: "Mètrica", prompt: "Un vers de 10 síl·labes és d'art...", type: "choice", options: ["menor", "major"], accepted: ["major"], hint: "Té nou síl·labes o més.", explanation: "Els versos de nou síl·labes o més són d'art major." },
+              { title: "Límit del recompte", tag: "Mètrica", prompt: "En català, fins on comptem les síl·labes d'un vers?", type: "choice", options: ["Fins a l'última síl·laba tònica", "Fins a l'última lletra", "Només fins a la meitat"], accepted: ["Fins a l'última síl·laba tònica"], hint: "Les síl·labes àtones finals no compten.", explanation: "En català comptem fins a l'última síl·laba tònica." }
+            ]
+          },
+          {
+            label: "Rima",
+            title: "Reconeix la rima",
+            intro: "Diferencia la coincidència total de sons de la coincidència només vocàlica.",
+            exercises: [
+              { title: "Cant i encant", tag: "Rima", prompt: "Quin tipus de rima formen «cant» i «encant»?", type: "choice", options: ["Consonant", "Assonant", "No rimen"], accepted: ["Consonant"], hint: "Coincideixen tots els sons finals.", explanation: "«Cant» i «encant» tenen rima consonant." },
+              { title: "Casa i blanca", tag: "Rima", prompt: "Quin tipus de rima formen «casa» i «blanca»?", type: "choice", options: ["Consonant", "Assonant", "No rimen"], accepted: ["Assonant"], hint: "Coincideixen les vocals a-a, però no totes les consonants.", explanation: "«Casa» i «blanca» tenen rima assonant." },
+              { title: "Vers lliure", tag: "Rima", prompt: "Com s'anomena un vers o poema sense un esquema regular de rima i mètrica?", type: "text", accepted: ["vers lliure", "lliure"], hint: "La resposta conté la paraula «lliure».", explanation: "S'anomena vers lliure." },
+              { title: "Recompte senzill", tag: "Mètrica", prompt: "Quantes síl·labes mètriques té «Sol brillant»?", text: "Sol / bri / llant", type: "text", accepted: ["3", "tres"], hint: "Compta les tres parts separades.", explanation: "El vers té 3 síl·labes mètriques." },
+              { title: "Classificació", tag: "Mètrica", prompt: "Si un vers té 7 síl·labes, com es classifica?", type: "choice", options: ["Art menor", "Art major"], accepted: ["Art menor"], hint: "Té menys de nou síl·labes.", explanation: "Un vers de 7 síl·labes és d'art menor." }
+            ]
+          }
+        ]
+      };
+    </script>
+    <script src="practica.js"></script>
+  </body>
+</html>

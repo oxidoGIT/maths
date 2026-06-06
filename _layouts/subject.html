@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} · 2º ESO</title>
+    <title>{{ page.title }} · {% if page.language == 'ca' %}2n d'ESO{% else %}2º ESO{% endif %}</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="site-header__inner">
         <a class="brand" href="index.html">{{ site.data.site.title }}</a>
-        <a class="back" href="index.html">← Volver</a>
+        <a class="back" href="index.html">← {% if page.language == 'ca' %}Tornar{% else %}Volver{% endif %}</a>
       </div>
     </header>
     <main class="page">
-      <p class="eyebrow">Asignatura</p>
+      <p class="eyebrow">{% if page.language == 'ca' %}Assignatura{% else %}Asignatura{% endif %}</p>
       <h1>{{ page.title }}</h1>
       <div class="content">{{ content }}</div>
     </main>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ortografia de B/V · Examen de juny 2026</title>
+    <link rel="stylesheet" href="estudi.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="../catala.html">← Torna a Català</a>
+        <p class="eyebrow">Català · 2n d'ESO · Examen de juny 2026</p>
+        <h1>Ortografia de B/V</h1>
+        <p class="hero__intro">
+          Normes bàsiques, famílies de paraules, verbs, pseudoderivats i mots
+          homòfons per escriure B i V amb seguretat.
+        </p>
+        <div class="progress">
+          <div class="progress__labels">
+            <span id="progress-label">0 exercicis completats</span>
+            <strong id="score-label">0%</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+          <button class="reset-progress" id="reset-progress" type="button">Esborra el progrés</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav class="contents" aria-label="Continguts">
+        <strong>En aquesta pàgina</strong>
+        <a href="#normes">Normes</a>
+        <a href="#verbs">Verbs</a>
+        <a href="#pseudoderivats">Pseudoderivats</a>
+        <a href="#homofons">Homòfons</a>
+        <a href="#practica">Exercicis</a>
+      </nav>
+
+      <section class="theory-section" id="normes">
+        <p class="eyebrow">Teoria 1</p>
+        <h2>Normes bàsiques</h2>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Escrivim B</h3>
+            <ul>
+              <li>Davant de <strong>L</strong> i <strong>R</strong>: biblioteca, població, arbre, obrir.</li>
+              <li>Després de <strong>M</strong>: combinació, ombra.</li>
+              <li>En paraules de la família d'un mot amb <strong>P</strong>: caber/cap, lloba/llop, saber/sap.</li>
+            </ul>
+          </article>
+          <article class="theory-card">
+            <h3>Escrivim V</h3>
+            <ul>
+              <li>Després de <strong>N</strong>: canvi, enviar.</li>
+              <li>En paraules de la família d'un mot amb <strong>U</strong>: escrivim/escriure, nevada/neu.</li>
+              <li>Cal recordar excepcions com <strong>tramvia</strong>.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="theory-section" id="verbs">
+        <p class="eyebrow">Teoria 2</p>
+        <h2>La B i la V en els verbs</h2>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Imperfet d'indicatiu</h3>
+            <p>
+              Els verbs de la primera conjugació fan l'imperfet amb
+              <strong>V</strong>: <em>-ava, -aves, -ava, -àvem, -àveu, -aven</em>.
+            </p>
+            <p class="example">jo saludava · nosaltres cantàvem · ells parlaven</p>
+          </article>
+          <article class="theory-card">
+            <h3>Verbs que cal memoritzar</h3>
+            <ul>
+              <li>Les formes del verb <strong>haver</strong>: havia, havies, havíem...</li>
+              <li>Les formes vaig, vas, va, vam, vau, van.</li>
+              <li>Amb B: trobar, arribar i acabar.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="theory-section" id="pseudoderivats">
+        <p class="eyebrow">Teoria 3</p>
+        <h2>Els pseudoderivats</h2>
+        <p class="theory-lead">
+          Són paraules cultes que provenen directament del llatí. S'assemblen a
+          mots de la mateixa família, però mantenen l'arrel llatina i poden
+          canviar B per V o V per B.
+        </p>
+        <div class="memory-grid">
+          <article class="memory-card"><strong>calb</strong><span>calvície</span></article>
+          <article class="memory-card"><strong>cervell</strong><span>cerebral</span></article>
+          <article class="memory-card"><strong>llavi</strong><span>labial</span></article>
+          <article class="memory-card"><strong>moviment</strong><span>mobilitat</span></article>
+          <article class="memory-card"><strong>prova</strong><span>probable · probabilitat</span></article>
+        </div>
+      </section>
+
+      <section class="theory-section" id="homofons">
+        <p class="eyebrow">Teoria 4</p>
+        <h2>Mots homòfons amb B/V</h2>
+        <p class="theory-lead">Sonen igual, però s'escriuen diferent i tenen significats diferents.</p>
+        <div class="memory-grid">
+          <article class="memory-card"><strong>bellesa / vellesa</strong><span>qualitat de bell / edat avançada</span></article>
+          <article class="memory-card"><strong>bena / vena</strong><span>tira de teixit / vas sanguini</span></article>
+          <article class="memory-card"><strong>bola / vola</strong><span>objecte esfèric / forma del verb volar</span></article>
+        </div>
+      </section>
+
+      <section class="practice" id="practica">
+        <p class="eyebrow">Pràctica autocorrectiva</p>
+        <h2>Practica B i V</h2>
+        <p class="practice-lead">Completa cada mot o tria la forma correcta.</p>
+        <div id="practice-root"></div>
+      </section>
+    </main>
+
+    <script>
+      window.practiceData = {
+        id: "ortografia-b-v",
+        sections: [
+          {
+            label: "Normes i verbs",
+            title: "Completa amb B o V",
+            intro: "Aplica les normes i recorda les formes verbals estudiades.",
+            exercises: [
+              { title: "Davant de L", tag: "B/V", prompt: "Completa el mot: bi_lioteca", type: "text", accepted: ["b", "biblioteca"], hint: "Davant de L solem escriure B.", explanation: "S'escriu biblioteca, amb B." },
+              { title: "Darrere de N", tag: "B/V", prompt: "Completa el mot: e_viar", type: "text", accepted: ["v", "enviar"], hint: "Després de N solem escriure V.", explanation: "S'escriu enviar, amb V." },
+              { title: "Darrere de M", tag: "B/V", prompt: "Completa el mot: o_bra", type: "text", accepted: ["b", "ombra"], hint: "Després de M solem escriure B.", explanation: "S'escriu ombra, amb B." },
+              { title: "Família de neu", tag: "Famílies", prompt: "Quina forma és correcta?", type: "choice", options: ["nebada", "nevada"], accepted: ["nevada"], hint: "Neu conté una U que es transforma en V.", explanation: "S'escriu nevada perquè pertany a la família de neu." },
+              { title: "Imperfet", tag: "Verbs", prompt: "Completa: Quan era petit, juga_a al parc.", type: "text", accepted: ["v", "jugava"], hint: "L'imperfet dels verbs de la primera conjugació porta V.", explanation: "La forma correcta és jugava." },
+              { title: "Verb haver", tag: "Verbs", prompt: "Completa: No t'_avia vist mai.", type: "text", accepted: ["h", "havia"], hint: "Aquí cal escriure una forma del verb haver completa.", explanation: "La forma correcta és havia, amb H i V." }
+            ]
+          },
+          {
+            label: "Pseudoderivats i homòfons",
+            title: "Paraules que cal distingir",
+            intro: "Relaciona cada paraula amb la forma o el significat correcte.",
+            exercises: [
+              { title: "Pseudoderivat de llavi", tag: "Pseudoderivat", prompt: "Quina paraula és correcta?", type: "choice", options: ["lavial", "labial"], accepted: ["labial"], hint: "El pseudoderivat conserva l'arrel llatina.", explanation: "El pseudoderivat de llavi és labial, amb B." },
+              { title: "Pseudoderivat de moviment", tag: "Pseudoderivat", prompt: "Completa el mot: mo_ilitat", type: "text", accepted: ["b", "mobilitat"], hint: "És una paraula culta derivada directament del llatí.", explanation: "S'escriu mobilitat, amb B." },
+              { title: "Una tira de teixit", tag: "Homòfons", prompt: "Quina paraula significa «tira de teixit per cobrir una ferida»?", type: "choice", options: ["bena", "vena"], accepted: ["bena"], hint: "La vena transporta sang.", explanation: "Una bena és una tira de teixit; una vena és un vas sanguini." },
+              { title: "Qualitat de bell", tag: "Homòfons", prompt: "Quina paraula significa «qualitat de bell»?", type: "choice", options: ["bellesa", "vellesa"], accepted: ["bellesa"], hint: "Vellesa es relaciona amb vell.", explanation: "Bellesa és la qualitat de bell; vellesa és l'edat avançada." }
+            ]
+          }
+        ]
+      };
+    </script>
+    <script src="practica.js"></script>
+  </body>
+</html>

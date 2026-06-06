@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locucions i frases fetes · Examen de juny 2026</title>
+    <link rel="stylesheet" href="estudi.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="../catala.html">← Torna a Català</a>
+        <p class="eyebrow">Català · 2n d'ESO · Examen de juny 2026</p>
+        <h1>Locucions i frases fetes</h1>
+        <p class="hero__intro">
+          Expressions fixades per l'ús que tenen un significat unitari, sovint
+          figurat, i que no podem interpretar paraula per paraula.
+        </p>
+        <div class="progress">
+          <div class="progress__labels">
+            <span id="progress-label">0 exercicis completats</span>
+            <strong id="score-label">0%</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+          <button class="reset-progress" id="reset-progress" type="button">Esborra el progrés</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <nav class="contents" aria-label="Continguts">
+        <strong>En aquesta pàgina</strong>
+        <a href="#diferencia">Diferència</a>
+        <a href="#locucions">Locucions</a>
+        <a href="#frases-fetes">Frases fetes</a>
+        <a href="#practica">Exercicis</a>
+      </nav>
+
+      <section class="theory-section" id="diferencia">
+        <p class="eyebrow">Teoria 1</p>
+        <h2>Com les distingim?</h2>
+        <p class="theory-lead">
+          Tant les locucions com les frases fetes són expressions fixades,
+          populars i amb un significat global. La diferència principal és la
+          presència d'un verb.
+        </p>
+        <div class="theory-grid">
+          <article class="theory-card">
+            <h3>Locució</h3>
+            <p>És un grup fix de paraules que funciona com una sola peça i <strong>no conté un verb conjugat</strong>.</p>
+            <p class="example">a corre-cuita = ràpidament<br />de gom a gom = completament ple</p>
+          </article>
+          <article class="theory-card">
+            <h3>Frase feta</h3>
+            <p>És una oració fixada per l'ús i, per tant, <strong>conté almenys un verb</strong>.</p>
+            <p class="example">anar de bòlit = estar molt ocupat<br />ploure a bots i barrals = ploure molt</p>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Truc d'examen</strong>
+          Busca primer el verb conjugat. Si n'hi ha, probablement és una frase feta; si no n'hi ha, és una locució.
+        </div>
+      </section>
+
+      <section class="theory-section" id="locucions">
+        <p class="eyebrow">Teoria 2</p>
+        <h2>Locucions útils</h2>
+        <div class="memory-grid">
+          <article class="memory-card"><strong>a corre-cuita</strong><span>molt de pressa</span></article>
+          <article class="memory-card"><strong>de gom a gom</strong><span>completament ple</span></article>
+          <article class="memory-card"><strong>en va</strong><span>inútilment, sense resultat</span></article>
+          <article class="memory-card"><strong>a la vegada</strong><span>simultàniament</span></article>
+          <article class="memory-card"><strong>de vell antuvi</strong><span>des de fa molt de temps</span></article>
+          <article class="memory-card"><strong>a empentes i rodolons</strong><span>amb moltes dificultats</span></article>
+        </div>
+      </section>
+
+      <section class="theory-section" id="frases-fetes">
+        <p class="eyebrow">Teoria 3</p>
+        <h2>Frases fetes freqüents</h2>
+        <div class="memory-grid">
+          <article class="memory-card"><strong>fer campana</strong><span>no assistir a classe</span></article>
+          <article class="memory-card"><strong>ser un tros de pa</strong><span>ser molt bona persona</span></article>
+          <article class="memory-card"><strong>tornar en si</strong><span>recuperar els sentits</span></article>
+          <article class="memory-card"><strong>no tenir ni cap ni peus</strong><span>no tenir sentit</span></article>
+          <article class="memory-card"><strong>aixecar la camisa</strong><span>enganyar</span></article>
+          <article class="memory-card"><strong>estirar-se els cabells</strong><span>desesperar-se o penedir-se molt</span></article>
+        </div>
+      </section>
+
+      <section class="practice" id="practica">
+        <p class="eyebrow">Pràctica autocorrectiva</p>
+        <h2>Classifica i interpreta</h2>
+        <p class="practice-lead">Identifica el tipus d'expressió i el seu significat figurat.</p>
+        <div id="practice-root"></div>
+      </section>
+    </main>
+
+    <script>
+      window.practiceData = {
+        id: "locucions-frases-fetes",
+        sections: [
+          {
+            label: "Classificació",
+            title: "Locució o frase feta?",
+            intro: "Fixa't sobretot en si hi ha un verb conjugat.",
+            exercises: [
+              { title: "A corre-cuita", tag: "Classificació", prompt: "Quin tipus d'expressió és «a corre-cuita»?", type: "choice", options: ["Locució", "Frase feta"], accepted: ["Locució"], hint: "No hi ha cap verb conjugat.", explanation: "«A corre-cuita» és una locució i significa «molt de pressa»." },
+              { title: "Fer campana", tag: "Classificació", prompt: "Quin tipus d'expressió és «fer campana»?", type: "choice", options: ["Locució", "Frase feta"], accepted: ["Frase feta"], hint: "Conté el verb fer.", explanation: "«Fer campana» és una frase feta perquè conté un verb." },
+              { title: "En va", tag: "Classificació", prompt: "Quin tipus d'expressió és «en va»?", type: "choice", options: ["Locució", "Frase feta"], accepted: ["Locució"], hint: "És un grup sense verb.", explanation: "«En va» és una locució que significa «inútilment»." },
+              { title: "Tornar en si", tag: "Classificació", prompt: "Quin tipus d'expressió és «tornar en si»?", type: "choice", options: ["Locució", "Frase feta"], accepted: ["Frase feta"], hint: "Hi apareix un infinitiu que forma part d'una oració fixada.", explanation: "«Tornar en si» és una frase feta que significa recuperar els sentits." }
+            ]
+          },
+          {
+            label: "Significat",
+            title: "Què volen dir?",
+            intro: "No interpretis les paraules literalment: busca el significat global.",
+            exercises: [
+              { title: "De gom a gom", tag: "Significat", prompt: "Què significa que un lloc és ple «de gom a gom»?", type: "choice", options: ["Que és completament ple", "Que està molt net", "Que és molt antic"], accepted: ["Que és completament ple"], hint: "No hi queda espai lliure.", explanation: "«De gom a gom» significa completament ple." },
+              { title: "Un tros de pa", tag: "Significat", prompt: "Què significa que algú «és un tros de pa»?", type: "choice", options: ["Que té molta gana", "Que és molt bona persona", "Que treballa de forner"], accepted: ["Que és molt bona persona"], hint: "És una valoració positiva del caràcter.", explanation: "«Ser un tros de pa» significa ser molt bona persona." },
+              { title: "Sense sentit", tag: "Significat", prompt: "Quina frase feta equival a «no tenir sentit»?", type: "choice", options: ["No tenir ni cap ni peus", "Tornar en si", "Fer campana"], accepted: ["No tenir ni cap ni peus"], hint: "Esmenta dues parts del cos.", explanation: "«No tenir ni cap ni peus» significa no tenir sentit." },
+              { title: "Enganyar", tag: "Significat", prompt: "Quina frase feta significa «enganyar»?", type: "choice", options: ["Aixecar la camisa", "Estirar-se els cabells", "Ploure a bots i barrals"], accepted: ["Aixecar la camisa"], hint: "No es refereix literalment a una peça de roba.", explanation: "«Aixecar la camisa» significa enganyar algú." },
+              { title: "Context", tag: "Ús", prompt: "Completa amb l'expressió més adequada: «Hem arribat tard perquè hem fet els deures _____.»", type: "choice", options: ["a corre-cuita", "de gom a gom", "de vell antuvi"], accepted: ["a corre-cuita"], hint: "Els han fet molt de pressa.", explanation: "«A corre-cuita» encaixa perquè significa de pressa i precipitadament." },
+              { title: "Context escolar", tag: "Ús", prompt: "Completa: «En Pau no ha vingut a classe perquè ha decidit _____.»", type: "choice", options: ["fer campana", "tornar en si", "ser un tros de pa"], accepted: ["fer campana"], hint: "És una expressió relacionada amb faltar a classe.", explanation: "«Fer campana» significa no assistir a classe voluntàriament." }
+            ]
+          }
+        ]
+      };
+    </script>
+    <script src="practica.js"></script>
+  </body>
+</html>

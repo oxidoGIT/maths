@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulació de l'examen de juny 2026 · Català</title>
+    <link rel="stylesheet" href="estudi.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="../catala.html">← Torna a Català</a>
+        <p class="eyebrow">Català · 2n d'ESO · Simulació d'examen</p>
+        <h1>Examen de juny 2026</h1>
+        <p class="hero__intro">
+          Simulació autocorrectiva basada en la rúbrica, el resum del temari i
+          els tipus d'activitats fetes a classe. Intenta completar-la seguida i
+          sense consultar la teoria.
+        </p>
+        <div class="progress">
+          <div class="progress__labels">
+            <span id="progress-label">0 exercicis completats</span>
+            <strong id="score-label">0%</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+          <button class="reset-progress" id="reset-progress" type="button">Reinicia la simulació</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="simulation-map">
+        <p class="eyebrow">Mapa de la prova</p>
+        <h2>Cinc blocs, com al temari</h2>
+        <p>
+          La simulació combina memòria, comprensió i aplicació. Les solucions i
+          les pistes hi són per corregir-te després del primer intent.
+        </p>
+        <nav class="simulation-links" aria-label="Blocs de la simulació">
+          <a href="#literatura"><small>Bloc 1</small>Ausiàs March</a>
+          <a href="#ortografia"><small>Bloc 2</small>Ortografia B/V</a>
+          <a href="#locucions"><small>Bloc 3</small>Locucions i frases fetes</a>
+          <a href="#verbs"><small>Bloc 4</small>Tipus de verbs</a>
+          <a href="#poesia"><small>Bloc 5</small>Poesia</a>
+        </nav>
+      </section>
+
+      <div class="callout">
+        <strong>Estratègia recomanada</strong>
+        Fes una primera volta sense pistes. Després revisa només els errors,
+        consulta la pàgina del tema corresponent i torna a intentar-los.
+      </div>
+
+      <section class="practice">
+        <div id="practice-root"></div>
+      </section>
+    </main>
+
+    <script>
+      window.practiceData = {
+        id: "simulacio-examen",
+        sections: [
+          {
+            id: "literatura",
+            label: "Bloc 1 · Literatura",
+            title: "Ausiàs March i el segle XV",
+            intro: "Respon preguntes breus sobre el context, la vida i l'obra.",
+            exercises: [
+              { title: "Època literària", tag: "1 punt", prompt: "Quin segle és el segle d'or de la literatura catalana?", type: "text", accepted: ["segle xv", "xv", "15", "segle 15"], hint: "És el segle en què escriu Ausiàs March.", explanation: "El segle XV és el segle d'or de la literatura catalana." },
+              { title: "Successió de la Corona", tag: "1 punt", prompt: "Quin rei mor sense descendència el 1410?", type: "choice", options: ["Martí l'Humà", "Ferran d'Antequera", "Jaume I"], accepted: ["Martí l'Humà"], hint: "La seva mort provoca el Compromís de Casp.", explanation: "Martí l'Humà mor sense descendència l'any 1410." },
+              { title: "Biografia", tag: "1 punt", prompt: "On i quan neix Ausiàs March?", type: "choice", options: ["Gandia, 1397", "Barcelona, 1412", "València, 1425"], accepted: ["Gandia, 1397"], hint: "Neix abans del Compromís de Casp.", explanation: "Ausiàs March neix a Gandia l'any 1397." },
+              { title: "Obra", tag: "1 punt", prompt: "Quin d'aquests temes apareix en la poesia d'Ausiàs March?", type: "choice", options: ["L'amor, la mort i Déu", "Només les batalles militars", "Únicament la natura"], accepted: ["L'amor, la mort i Déu"], hint: "La seva obra tracta les grans passions i preocupacions humanes.", explanation: "Ausiàs March tracta l'amor, la mort, Déu, el més enllà i les passions." },
+              { title: "Senyal", tag: "1 punt", prompt: "Com s'anomena el pseudònim de la dama que apareix al final de molts poemes?", type: "text", accepted: ["senyal", "el senyal"], hint: "És una paraula que també pot significar indici.", explanation: "Aquest pseudònim rep el nom de senyal." }
+            ]
+          },
+          {
+            id: "ortografia",
+            label: "Bloc 2 · Ortografia",
+            title: "B, V, pseudoderivats i homòfons",
+            intro: "Completa com en els exercicis de classe.",
+            exercises: [
+              { title: "Completa el mot", tag: "1 punt", prompt: "Escriu el mot complet: po_lació", type: "text", accepted: ["població", "poblacio"], hint: "Davant de L escrivim B.", explanation: "S'escriu població." },
+              { title: "Completa el mot", tag: "1 punt", prompt: "Escriu el mot complet: can_i", type: "text", accepted: ["canvi"], hint: "Després de N solem escriure V.", explanation: "S'escriu canvi." },
+              { title: "Forma verbal", tag: "1 punt", prompt: "Completa: «Nosaltres canta_em cada tarda.»", type: "text", accepted: ["cantàvem", "cantavem"], hint: "És l'imperfet de la primera conjugació.", explanation: "La forma correcta és cantàvem, amb V." },
+              { title: "Pseudoderivat", tag: "1 punt", prompt: "Quina forma és correcta?", type: "choice", options: ["probabilitat", "provabilitat"], accepted: ["probabilitat"], hint: "És un pseudoderivat culte relacionat amb prova.", explanation: "S'escriu probabilitat, amb B." },
+              { title: "Mot homòfon", tag: "1 punt", prompt: "Completa: «El metge li va posar una _____ a la ferida.»", type: "choice", options: ["bena", "vena"], accepted: ["bena"], hint: "Una vena és un vas sanguini.", explanation: "Una bena és una tira de teixit per cobrir una ferida." }
+            ]
+          },
+          {
+            id: "locucions",
+            label: "Bloc 3 · Lèxic",
+            title: "Locucions i frases fetes",
+            intro: "Classifica les expressions i interpreta'n el sentit figurat.",
+            exercises: [
+              { title: "Classificació", tag: "1 punt", prompt: "«De gom a gom» és...", type: "choice", options: ["una locució", "una frase feta"], accepted: ["una locució"], hint: "No conté cap verb.", explanation: "«De gom a gom» és una locució." },
+              { title: "Classificació", tag: "1 punt", prompt: "«Aixecar la camisa» és...", type: "choice", options: ["una locució", "una frase feta"], accepted: ["una frase feta"], hint: "Conté el verb aixecar.", explanation: "«Aixecar la camisa» és una frase feta." },
+              { title: "Significat", tag: "1 punt", prompt: "Què significa «anar de bòlit»?", type: "choice", options: ["Estar molt ocupat", "Anar molt lentament", "Perdre's pel camí"], accepted: ["Estar molt ocupat"], hint: "S'utilitza quan tenim moltes coses per fer.", explanation: "«Anar de bòlit» significa estar molt ocupat." },
+              { title: "Significat", tag: "1 punt", prompt: "Què significa «tornar en si»?", type: "choice", options: ["Recuperar els sentits", "Tornar a casa", "Canviar d'opinió"], accepted: ["Recuperar els sentits"], hint: "Es diu després d'un desmai.", explanation: "«Tornar en si» significa recuperar els sentits." },
+              { title: "Ús en context", tag: "1 punt", prompt: "Completa: «El pavelló era ple _____.»", type: "choice", options: ["de gom a gom", "en va", "a corre-cuita"], accepted: ["de gom a gom"], hint: "No hi quedava cap seient lliure.", explanation: "L'expressió adequada és «de gom a gom»." }
+            ]
+          },
+          {
+            id: "verbs",
+            label: "Bloc 4 · Gramàtica",
+            title: "Sintagma verbal i tipus de verbs",
+            intro: "Classifica els verbs segons la seva relació amb els complements.",
+            exercises: [
+              { title: "Verb copulatiu", tag: "1 punt", prompt: "A «La sopa està freda», el verb és...", type: "choice", options: ["copulatiu", "predicatiu"], accepted: ["copulatiu"], hint: "Estar uneix el subjecte amb un atribut.", explanation: "«Està» és copulatiu i «freda» és l'atribut." },
+              { title: "Verb predicatiu", tag: "1 punt", prompt: "A «La nena dibuixa un paisatge», el verb és...", type: "choice", options: ["copulatiu", "predicatiu"], accepted: ["predicatiu"], hint: "Dibuixar té significat ple.", explanation: "«Dibuixa» és un verb predicatiu." },
+              { title: "Verb transitiu", tag: "1 punt", prompt: "A «El cuiner prepara el sopar», el verb és...", type: "choice", options: ["transitiu", "intransitiu"], accepted: ["transitiu"], hint: "Pregunta: què prepara?", explanation: "«El sopar» és CD; per tant, el verb és transitiu." },
+              { title: "Verb intransitiu", tag: "1 punt", prompt: "A «Els nadons dormen», el verb és...", type: "choice", options: ["transitiu", "intransitiu"], accepted: ["intransitiu"], hint: "No necessita complement directe.", explanation: "«Dormir» és intransitiu." },
+              { title: "Verb pronominal", tag: "1 punt", prompt: "Quin d'aquests verbs és pronominal?", type: "choice", options: ["adonar-se", "caminar", "llegir"], accepted: ["adonar-se"], hint: "Es conjuga sempre amb un pronom feble.", explanation: "«Adonar-se» és pronominal." }
+            ]
+          },
+          {
+            id: "poesia",
+            label: "Bloc 5 · Poesia",
+            title: "Mètrica i rima",
+            intro: "Aplica les regles bàsiques de l'anàlisi poètica.",
+            exercises: [
+              { title: "Lírica", tag: "1 punt", prompt: "La poesia lírica expressa sobretot...", type: "choice", options: ["sentiments i emocions", "dades objectives", "instruccions"], accepted: ["sentiments i emocions"], hint: "Té un punt de vista subjectiu.", explanation: "La lírica expressa sentiments, emocions i una mirada subjectiva." },
+              { title: "Mètrica", tag: "1 punt", prompt: "Què compta la mètrica?", type: "choice", options: ["Les síl·labes dels versos", "Els personatges", "Els paràgrafs"], accepted: ["Les síl·labes dels versos"], hint: "Serveix per mesurar els versos.", explanation: "La mètrica compta les síl·labes dels versos." },
+              { title: "Recompte català", tag: "1 punt", prompt: "En català, les síl·labes es compten fins a...", type: "choice", options: ["l'última síl·laba tònica", "l'última síl·laba escrita", "la primera pausa"], accepted: ["l'última síl·laba tònica"], hint: "Les síl·labes àtones finals no compten.", explanation: "Comptem fins a l'última síl·laba tònica." },
+              { title: "Art major o menor", tag: "1 punt", prompt: "Un vers de 9 síl·labes és d'art...", type: "choice", options: ["major", "menor"], accepted: ["major"], hint: "L'art menor arriba fins a vuit.", explanation: "Amb 9 síl·labes, el vers és d'art major." },
+              { title: "Tipus de rima", tag: "1 punt", prompt: "Si coincideixen vocals i consonants des de l'última vocal tònica, la rima és...", type: "choice", options: ["consonant", "assonant", "lliure"], accepted: ["consonant"], hint: "La coincidència és completa.", explanation: "Quan coincideixen vocals i consonants, la rima és consonant." }
+            ]
+          }
+        ]
+      };
+    </script>
+    <script src="practica.js"></script>
+  </body>
+</html>
