@@ -24,3 +24,7 @@ language: es
 ## 3. Sistemas de ecuaciones lineales
 
 * [Sistemas de ecuaciones](sistemas-ecuaciones.html)
+
+## 4. Geometría Plana
+
+### Polígonos, Pitágoras y más.
