@@ -31,4 +31,4 @@ language: es
 
 ## 5. Preparación del examen de Junio
 
-*  [Repaso autocorregible: sistemas y geometría plana ](/matematicas/repaso-examen-sistemas-geometria.html) · 63 ejercicios organizados según los puntos evaluables de la rúbrica.
+*  [Repaso autocorregible: sistemas y geometría plana ](matematicas/repaso-examen-sistemas-geometria.html) · 63 ejercicios organizados según los puntos evaluables de la rúbrica.
