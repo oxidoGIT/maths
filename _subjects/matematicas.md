@@ -3,10 +3,6 @@ title: Matemáticas
 order: 1
 language: es
 ---
-## Preparación del examen
-
-* [Repaso autocorregible: sistemas y geometría plana](matematicas/repaso-examen-sistemas-geometria.html) · 63 ejercicios organizados según los puntos evaluables de la rúbrica.
-
 ## 1. Repaso básico de álgebra y geometría
 
 * [Operaciones con fracciones](https://chatgpt.com/canvas/shared/69dbccf8c8548191a2b485968f15892d)
@@ -32,3 +28,7 @@ language: es
 ## 4. Geometría Plana
 
 * [Polígonos, Pitágoras y más.](matematicas/geometriaplana.html)
+
+## 5. Preparación del examen de Junio
+
+*  [Repaso autocorregible: sistemas y geometría plana ](<>) · 63 ejercicios organizados según los puntos evaluables de la rúbrica.
