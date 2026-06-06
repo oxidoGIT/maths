@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geometría plana · Práctica interactiva</title>
+    <link rel="stylesheet" href="geometriaplana.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <a class="back" href="../matematicas.html">← Volver a Matemáticas</a>
+        <p class="eyebrow">Matemáticas · 2º ESO</p>
+        <h1>Polígonos, Pitágoras y más</h1>
+        <p class="hero__intro">
+          Reconoce figuras, calcula ángulos y áreas, y domina el teorema de
+          Pitágoras paso a paso.
+        </p>
+        <div class="progress">
+          <div>
+            <span id="progress-label">0 ejercicios completados</span>
+            <strong id="score-label">0 puntos</strong>
+          </div>
+          <div class="progress__track"><span id="progress-bar"></span></div>
+          <button class="reset-progress" id="reset-progress" type="button">Resetear progreso</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="theory">
+        <div>
+          <p class="eyebrow">Antes de empezar</p>
+          <h2>La idea clave</h2>
+          <p>
+            La geometría plana estudia figuras de dos dimensiones. Para
+            resolver problemas, identifica primero la figura y después elige
+            la propiedad o fórmula adecuada.
+          </p>
+        </div>
+        <div class="theory__cards">
+          <article>
+            <span>01</span>
+            <h3>Clasifica</h3>
+            <p>Cuenta lados, compara longitudes y observa sus ángulos.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Dibuja y etiqueta</h3>
+            <p>Señala los datos conocidos y la medida que buscas.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Elige la fórmula</h3>
+            <p>Sustituye los datos, calcula y escribe siempre la unidad.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-guide">
+        <p class="eyebrow">Chuleta rápida</p>
+        <h2>Fórmulas imprescindibles</h2>
+        <div class="method-grid">
+          <article><strong>Ángulos de un polígono</strong><span>Suma interior = 180° · (n − 2)</span></article>
+          <article><strong>Teorema de Pitágoras</strong><span>cateto² + cateto² = hipotenusa²</span></article>
+          <article><strong>Triángulo</strong><span>Área = base · altura ÷ 2</span></article>
+          <article><strong>Paralelogramo</strong><span>Área = base · altura</span></article>
+          <article><strong>Rombo</strong><span>Área = diagonal mayor · diagonal menor ÷ 2</span></article>
+          <article><strong>Trapecio</strong><span>Área = (base mayor + base menor) · altura ÷ 2</span></article>
+          <article><strong>Polígono regular</strong><span>Área = perímetro · apotema ÷ 2</span></article>
+        </div>
+      </section>
+
+      <section class="levels" id="levels"></section>
+    </main>
+
+    <template id="exercise-template">
+      <article class="exercise">
+        <div class="exercise__top">
+          <span class="exercise__number"></span>
+          <span class="exercise__tag"></span>
+        </div>
+        <h3 class="exercise__title"></h3>
+        <p class="exercise__prompt"></p>
+        <pre class="equations"></pre>
+        <div class="answer"></div>
+        <div class="exercise__actions">
+          <button class="button check" type="button">Comprobar</button>
+          <button class="button button--soft hint" type="button">Pista</button>
+          <button class="button button--ghost solution" type="button">Ver solución</button>
+        </div>
+        <p class="feedback" role="status"></p>
+        <div class="explanation"></div>
+      </article>
+    </template>
+
+    <script src="geometriaplana.js"></script>
+  </body>
+</html>
