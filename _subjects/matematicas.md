@@ -27,4 +27,4 @@ language: es
 
 ## 4. Geometría Plana
 
-### Polígonos, Pitágoras y más.
+* [Polígonos, Pitágoras y más.](#4-geometría-plana)
