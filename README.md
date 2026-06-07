@@ -21,3 +21,17 @@ automaticamente mediante Jekyll.
 
 El acceso de escritura del CMS requiere conectar un proveedor OAuth compatible
 con el backend de GitHub antes del primer inicio de sesion.
+
+## Fuentes educativas
+
+Los PDF escaneados o proporcionados como material educativo se publican en
+[`sources/`](sources/) usando la estructura
+`sources/<asignatura>/<tema>/<documento>.pdf`. Cada PDF debe estar enlazado
+desde la pagina educativa correspondiente.
+
+La politica completa esta en [`sources/README.md`](sources/README.md). Su
+cumplimiento se comprueba con:
+
+```sh
+python3 scripts/check_sources.py
+```
