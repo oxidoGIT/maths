@@ -35,3 +35,10 @@ cumplimiento se comprueba con:
 ```sh
 python3 scripts/check_sources.py
 ```
+
+Todas las paginas HTML y plantillas deben enlazar el favicon compartido de la
+raiz. Se comprueba con:
+
+```sh
+python3 scripts/check_favicon.py
+```

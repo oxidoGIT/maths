@@ -19,6 +19,8 @@ This is the Jekyll source for the GitHub Pages site at
 - Do not create temporary GitHub Actions workflows to publish generated files.
   Publish normal reviewed Git commits instead.
 - Preserve relative links and account for the `/markel` base URL.
+- Every new HTML page and layout must reference the shared root `favicon.svg`
+  using the correct relative path for its directory depth.
 - For multi-file features, use a branch and keep HTML, CSS, JS, and links
   together until they have been checked.
 - Do not push or merge until the requested change has been verified.
@@ -107,5 +109,7 @@ This is the Jekyll source for the GitHub Pages site at
 - Run `python3 scripts/check_sources.py` before committing or publishing any
   educational source change. Fix every misplaced, unlinked, or missing PDF it
   reports.
+- Run `python3 scripts/check_favicon.py` before committing or publishing any
+  HTML or layout change. Fix every page or layout it reports.
 - Before committing, confirm that no unintended source documents, temporary
   files, macOS metadata, or unrelated changes are included.
